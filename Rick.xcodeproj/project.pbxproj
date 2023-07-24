@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */; };
 		12DEC8B72A6ECB7C003DE5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */; };
-		12DEC8B92A6ECB7C003DE5EF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B82A6ECB7C003DE5EF /* ViewController.swift */; };
+		12DEC8B92A6ECB7C003DE5EF /* CamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B82A6ECB7C003DE5EF /* CamerasViewController.swift */; };
 		12DEC8BC2A6ECB7C003DE5EF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DEC8BA2A6ECB7C003DE5EF /* Main.storyboard */; };
 		12DEC8BE2A6ECB7D003DE5EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 12DEC8BD2A6ECB7D003DE5EF /* Assets.xcassets */; };
 		12DEC8C12A6ECB7D003DE5EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DEC8BF2A6ECB7D003DE5EF /* LaunchScreen.storyboard */; };
+		12DEC8CA2A6ECC11003DE5EF /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 12DEC8C92A6ECC11003DE5EF /* Alamofire */; };
+		12DEC8CD2A6ECEB0003DE5EF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12DEC8CC2A6ECEB0003DE5EF /* RealmSwift */; };
+		12DEC8CF2A6ED02F003DE5EF /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8CE2A6ED02F003DE5EF /* Model.swift */; };
+		12DEC8D52A6ED07F003DE5EF /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8D42A6ED07F003DE5EF /* NetworkLayer.swift */; };
+		12DEC8D82A6ED0A5003DE5EF /* StorageLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8D72A6ED0A5003DE5EF /* StorageLayer.swift */; };
+		12DEC8DD2A6ED154003DE5EF /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8DC2A6ED154003DE5EF /* CamerasCell.swift */; };
+		12DEC8E12A6ED7B1003DE5EF /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8E02A6ED7B1003DE5EF /* RealmModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		12DEC8B12A6ECB7C003DE5EF /* Rick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		12DEC8B82A6ECB7C003DE5EF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		12DEC8B82A6ECB7C003DE5EF /* CamerasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasViewController.swift; sourceTree = "<group>"; };
 		12DEC8BB2A6ECB7C003DE5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		12DEC8BD2A6ECB7D003DE5EF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		12DEC8C02A6ECB7D003DE5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12DEC8C22A6ECB7D003DE5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		12DEC8CE2A6ED02F003DE5EF /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		12DEC8D42A6ED07F003DE5EF /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		12DEC8D72A6ED0A5003DE5EF /* StorageLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLayer.swift; sourceTree = "<group>"; };
+		12DEC8DC2A6ED154003DE5EF /* CamerasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasCell.swift; sourceTree = "<group>"; };
+		12DEC8E02A6ED7B1003DE5EF /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +43,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12DEC8CD2A6ECEB0003DE5EF /* RealmSwift in Frameworks */,
+				12DEC8CA2A6ECC11003DE5EF /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +54,10 @@
 		12DEC8A82A6ECB7C003DE5EF = {
 			isa = PBXGroup;
 			children = (
+				12DEC8C22A6ECB7D003DE5EF /* Info.plist */,
 				12DEC8B32A6ECB7C003DE5EF /* Rick */,
+				12DEC8D92A6ED0D5003DE5EF /* View */,
+				12DEC8D62A6ED083003DE5EF /* Services */,
 				12DEC8B22A6ECB7C003DE5EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +73,73 @@
 		12DEC8B32A6ECB7C003DE5EF /* Rick */ = {
 			isa = PBXGroup;
 			children = (
-				12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */,
-				12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */,
-				12DEC8B82A6ECB7C003DE5EF /* ViewController.swift */,
-				12DEC8BA2A6ECB7C003DE5EF /* Main.storyboard */,
-				12DEC8BD2A6ECB7D003DE5EF /* Assets.xcassets */,
-				12DEC8BF2A6ECB7D003DE5EF /* LaunchScreen.storyboard */,
-				12DEC8C22A6ECB7D003DE5EF /* Info.plist */,
+				12DEC8D32A6ED05D003DE5EF /* SupportingFiles */,
+				12DEC8D22A6ED04C003DE5EF /* Models */,
 			);
 			path = Rick;
+			sourceTree = "<group>";
+		};
+		12DEC8D22A6ED04C003DE5EF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				12DEC8CE2A6ED02F003DE5EF /* Model.swift */,
+				12DEC8E02A6ED7B1003DE5EF /* RealmModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		12DEC8D32A6ED05D003DE5EF /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */,
+				12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */,
+				12DEC8BD2A6ECB7D003DE5EF /* Assets.xcassets */,
+				12DEC8BF2A6ECB7D003DE5EF /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		12DEC8D62A6ED083003DE5EF /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				12DEC8D42A6ED07F003DE5EF /* NetworkLayer.swift */,
+				12DEC8D72A6ED0A5003DE5EF /* StorageLayer.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		12DEC8D92A6ED0D5003DE5EF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				12DEC8DE2A6ED159003DE5EF /* Cell */,
+				12DEC8DB2A6ED0EF003DE5EF /* Controllers */,
+				12DEC8DA2A6ED0E0003DE5EF /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		12DEC8DA2A6ED0E0003DE5EF /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				12DEC8BA2A6ECB7C003DE5EF /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		12DEC8DB2A6ED0EF003DE5EF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				12DEC8B82A6ECB7C003DE5EF /* CamerasViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		12DEC8DE2A6ED159003DE5EF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				12DEC8DC2A6ED154003DE5EF /* CamerasCell.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +158,10 @@
 			dependencies = (
 			);
 			name = Rick;
+			packageProductDependencies = (
+				12DEC8C92A6ECC11003DE5EF /* Alamofire */,
+				12DEC8CC2A6ECEB0003DE5EF /* RealmSwift */,
+			);
 			productName = Rick;
 			productReference = 12DEC8B12A6ECB7C003DE5EF /* Rick.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +190,10 @@
 				Base,
 			);
 			mainGroup = 12DEC8A82A6ECB7C003DE5EF;
+			packageReferences = (
+				12DEC8C82A6ECC11003DE5EF /* XCRemoteSwiftPackageReference "Alamofire" */,
+				12DEC8CB2A6ECEB0003DE5EF /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 12DEC8B22A6ECB7C003DE5EF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,8 +221,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12DEC8B92A6ECB7C003DE5EF /* ViewController.swift in Sources */,
+				12DEC8DD2A6ED154003DE5EF /* CamerasCell.swift in Sources */,
+				12DEC8D52A6ED07F003DE5EF /* NetworkLayer.swift in Sources */,
+				12DEC8B92A6ECB7C003DE5EF /* CamerasViewController.swift in Sources */,
 				12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */,
+				12DEC8E12A6ED7B1003DE5EF /* RealmModel.swift in Sources */,
+				12DEC8D82A6ED0A5003DE5EF /* StorageLayer.swift in Sources */,
+				12DEC8CF2A6ED02F003DE5EF /* Model.swift in Sources */,
 				12DEC8B72A6ECB7C003DE5EF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,7 +376,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Rick/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -319,7 +407,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Rick/Info.plist;
+				INFOPLIST_FILE = Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -364,6 +452,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12DEC8C82A6ECC11003DE5EF /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		12DEC8CB2A6ECEB0003DE5EF /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12DEC8C92A6ECC11003DE5EF /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12DEC8C82A6ECC11003DE5EF /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		12DEC8CC2A6ECEB0003DE5EF /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12DEC8CB2A6ECEB0003DE5EF /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 12DEC8A92A6ECB7C003DE5EF /* Project object */;
 }
