@@ -9,21 +9,21 @@ import Foundation
 
 // Структура для представления камеры
 struct Camera: Codable {
-    let name: String
-    let snapshot: String
+    let name: String?
+    let snapshot: String?
     let room: String?
-    let id: Int
-    let favorites: Bool
-    let rec: Bool
+    let id: Int?
+    let favorites: Bool?
+    let rec: Bool?
 }
 
 // Структура для представления данных
 struct CameraDataModel: Codable {
-    let success: Bool
-    let data: CameraData
+    let success: Bool?
+    let data: CameraData?
 }
 
 struct CameraData: Codable {
     let room: [String]?
-    let cameras: [Camera]
+    let cameras: [Camera]?
 }

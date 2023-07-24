@@ -19,7 +19,10 @@ class CamerasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        networkService.getData()
+        
+        DispatchQueue.main.async {
+            self.networkService.getData()
+        }
     }
 }
 
@@ -33,6 +36,7 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CamerasCell
         
         cell.camLabel.text = cam[indexPath.row].name
+        cell.configureKing(cam[indexPath.row])
         return cell
         
     }

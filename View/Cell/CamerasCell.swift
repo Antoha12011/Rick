@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CamerasCell: UITableViewCell {
 
@@ -14,6 +15,16 @@ class CamerasCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+    }
+    
+    func configureKing(_ model: Camera) {
+        guard let url = URL(string: model.snapshot ?? "Изображения нет") else { return }
+        camImage.kf.setImage(with: url, placeholder: nil)
+    }
+    
+    override func prepareForReuse() {
+        camLabel.text = nil
+        camImage.image = nil
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
