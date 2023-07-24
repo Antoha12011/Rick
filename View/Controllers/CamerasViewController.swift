@@ -13,25 +13,26 @@ class CamerasViewController: UIViewController {
     
     private var networkService = NetworkService()
     
+    var cam = [Camera]()
+    
     @IBOutlet weak var camTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         networkService.getData()
     }
-    
 }
 
 extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return cam.count
        
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CamerasCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CamerasCell
         
-//        cell.camLabel.text = cam[indexPath.row].name
+        cell.camLabel.text = cam[indexPath.row].name
         return cell
         
     }
