@@ -8,55 +8,21 @@
 import Foundation
 import UIKit
 
-// http://cars.cprogroup.ru/api/rubetek/cameras/
 
 final class NetworkService {
-    
-    /// Получение каналов
-    func fetchChannels(url: URL, completion: @escaping (Result<[Camera], Error>) -> Void) {
-        let session = URLSession.shared
-        var request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
+    func getData() {
+        var request = URLRequest(url: URL(string: "http://cars.cprogroup.ru/api/rubetek/cameras/")!,timeoutInterval: Double.infinity)
+        request.addValue("PHPSESSID=9e62b478fb782c640aaf3e5705d70f17", forHTTPHeaderField: "Cookie")
+        
         request.httpMethod = "GET"
-        session.dataTask(with: request) { (data, _, error) in
-            if let error = error {
-                completion(.failure(error))
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                print(String(describing: error))
                 return
             }
-            do {
-                guard let data else { return }
-                let decodeData = try JSONDecoder().decode(CameraData.self, from: data)
-                completion(.success(decodeData.cameras))
-            } catch let error {
-                completion(.failure(error))
-            }
-        }.resume()
-    }
-    
-    /// Получение изображений
-    func fetchImage(url: URL, completion: @escaping (UIImage?) -> Void) {
-        let session = URLSession.shared
-        var request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad)
-        request.httpMethod = "GET"
-        session.dataTask(with: request) { (data, response, error) in
-            
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
-                completion(nil)
-                return
-            }
-            
-            guard response is HTTPURLResponse else {
-                print("Invalid HTTP response")
-                completion(nil)
-                return
-            }
-            
-            if let data = data, let image = UIImage(data: data) {
-                completion(image)
-                
-            } else {
-                completion(nil)
-            }
-        }.resume()
+            print(String(data: data, encoding: .utf8)!)
+        }
+        task.resume()
     }
 }

@@ -7,6 +7,8 @@
 
 import UIKit
 
+//  http://cars.cprogroup.ru/api/rubetek/cameras/ --> Cameras JSON
+
 class CamerasViewController: UIViewController {
     
     private var networkService = NetworkService()
@@ -15,19 +17,7 @@ class CamerasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchChannels()
-    }
-    
-    func fetchChannels() {
-        guard let url = URL(string: "http://cars.cprogroup.ru/api/rubetek/cameras/") else { return }
-        networkService.fetchChannels(url: url) { result in
-            switch result {
-            case .success(_):
-                print("")
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        networkService.getData()
     }
     
 }
