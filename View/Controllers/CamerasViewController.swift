@@ -8,6 +8,7 @@
 import UIKit
 
 //  http://cars.cprogroup.ru/api/rubetek/cameras/ --> Cameras JSON
+//  http://cars.cprogroup.ru/api/rubetek/doors/ --> Doors JSON
 
 class CamerasViewController: UIViewController {
     
