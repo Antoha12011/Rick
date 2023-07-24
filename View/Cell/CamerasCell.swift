@@ -15,6 +15,8 @@ class CamerasCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        camImage.layer.cornerRadius = 10
     }
     
     func configureKing(_ model: Camera) {
