@@ -20,10 +20,15 @@ class CamerasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        let realm = try! Realm()
+//        try! realm.write {
+//            realm.deleteAll()
+//        }
+        
         let realm = try! Realm()
         cam = realm.objects(CamerasRealm.self)
         camTableView.reloadData()
-        
+
         fetchDataFromNetwork()
     
 //       print("User Realm User file location: \(realm.configuration.fileURL!.path)")
@@ -54,8 +59,9 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
-        let cam = cam[indexPath.row]
-        cell.camLabel.text = cam.name
+//        let cam = cam[indexPath.row]
+//        cell.camLabel.text = cam.name
+        cell.configure(model: cam[indexPath.row])
         
         return cell
         

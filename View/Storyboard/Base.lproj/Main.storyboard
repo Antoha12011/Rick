@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4TX-0Z-EiP">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -19,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="9Yd-ge-JkI">
-                                <rect key="frame" x="0.0" y="158" width="414" height="738"/>
+                                <rect key="frame" x="0.0" y="252" width="414" height="644"/>
                                 <color key="backgroundColor" systemColor="systemGray5Color"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="320" id="HVK-1D-b3Q" customClass="CamerasCell" customModule="Rick" customModuleProvider="target">
@@ -98,7 +97,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Yd-ge-JkI" secondAttribute="bottom" constant="-34" id="2wX-JI-5Js"/>
                             <constraint firstItem="9Yd-ge-JkI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7nm-zE-DKJ"/>
                             <constraint firstItem="paT-Zb-u1V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="GfN-om-EmL"/>
-                            <constraint firstItem="9Yd-ge-JkI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="66" id="HU0-r1-Vkj"/>
+                            <constraint firstItem="9Yd-ge-JkI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="160" id="HU0-r1-Vkj"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpO-Ag-SEK" secondAttribute="trailing" constant="80" id="S0v-Hb-Nfa"/>
                             <constraint firstItem="5JE-5g-vOB" firstAttribute="top" secondItem="paT-Zb-u1V" secondAttribute="bottom" constant="5" id="Vol-CG-eOY"/>
                             <constraint firstItem="kpO-Ag-SEK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="paT-Zb-u1V" secondAttribute="trailing" constant="8" symbolic="YES" id="iWW-Wd-9GM"/>
