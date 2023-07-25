@@ -15,9 +15,7 @@ class CamerasCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        camImage.layer.cornerRadius = 10
-        
+    
     }
     
     func configure(model: CamerasRealm) {
@@ -35,4 +33,15 @@ class CamerasCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
+    
+    override open var frame: CGRect {
+     get {
+         return super.frame
+     }
+     set {
+         var frame =  newValue
+         frame.size.height -= 20
+         super.frame = frame
+     }
+ }
 }

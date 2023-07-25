@@ -59,6 +59,9 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
+        
+        cell.contentView.layer.cornerRadius = 10
+        cell.contentView.layer.masksToBounds = true
 //        let cam = cam[indexPath.row]
 //        cell.camLabel.text = cam.name
         cell.configure(model: cam[indexPath.row])
@@ -68,6 +71,6 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 320
+        return 280
     }
 }
