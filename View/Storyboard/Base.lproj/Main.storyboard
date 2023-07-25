@@ -190,6 +190,7 @@
                                                 <constraint firstItem="4qG-eo-iB8" firstAttribute="trailing" secondItem="DuB-ep-dN9" secondAttribute="trailingMargin" id="yg3-6S-hbC"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="doorLabel" destination="siB-0e-U8k" id="INH-De-cQ6"/>
                                             <outlet property="lockImageView" destination="4qG-eo-iB8" id="Sav-mG-t9J"/>
@@ -350,6 +351,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="yj8-yK-VWe"/>
                     <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="Line 68" id="hBu-hi-aH4">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
