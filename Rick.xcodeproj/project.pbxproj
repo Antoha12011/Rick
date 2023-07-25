@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123296552A6FEA63004CEFF4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123296542A6FEA63004CEFF4 /* RealmManager.swift */; };
 		12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */; };
 		12DEC8B72A6ECB7C003DE5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */; };
 		12DEC8B92A6ECB7C003DE5EF /* CamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B82A6ECB7C003DE5EF /* CamerasViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123296542A6FEA63004CEFF4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		12DEC8B12A6ECB7C003DE5EF /* Rick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				12DEC8CE2A6ED02F003DE5EF /* CameraDataModel.swift */,
 				12FE43FC2A6F3AD8001EDB94 /* DoorDataModel.swift */,
 				12DEC8E02A6ED7B1003DE5EF /* RealmModel.swift */,
+				123296542A6FEA63004CEFF4 /* RealmManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 			files = (
 				12FE44002A6F4450001EDB94 /* DetailDomofonViewController.swift in Sources */,
 				12DEC8DD2A6ED154003DE5EF /* CamerasCell.swift in Sources */,
+				123296552A6FEA63004CEFF4 /* RealmManager.swift in Sources */,
 				12DEC8D52A6ED07F003DE5EF /* NetworkLayer.swift in Sources */,
 				12DEC8B92A6ECB7C003DE5EF /* CamerasViewController.swift in Sources */,
 				12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */,
@@ -312,7 +316,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -366,7 +370,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -390,7 +394,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -421,7 +425,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -120,7 +120,7 @@
         <!--Detail Domofon View Controller-->
         <scene sceneID="s4b-0i-Zio">
             <objects>
-                <viewController id="tF6-gV-4Y3" customClass="DetailDomofonViewController" customModule="Rick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="tF6-gV-4Y3" customClass="DetailDomofonViewController" customModule="Rick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9FQ-rD-a6c">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

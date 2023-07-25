@@ -13,6 +13,8 @@ import UIKit
 class CamerasViewController: UIViewController {
     
     private var networkService = NetworkService()
+    let realmManager = RealmManager()
+
     
     var cam: [Camera] = []
     
@@ -20,11 +22,17 @@ class CamerasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//        readModelsFromDatabase()
         
         DispatchQueue.main.async {
             self.networkService.getData()
         }
     }
+    
+//    private func readModelsFromDatabase() {
+//        let meditations = realmManager.readMeditationModels()
+//
+//    }
 }
 
 extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
