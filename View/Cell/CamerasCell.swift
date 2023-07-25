@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 class CamerasCell: UITableViewCell {
-
+    
     @IBOutlet weak var camImage: UIImageView!
     @IBOutlet weak var camLabel: UILabel!
     
@@ -19,16 +19,18 @@ class CamerasCell: UITableViewCell {
         camImage.layer.cornerRadius = 10
     }
     
-    func configureKing(_ model: Camera) {
-        guard let url = URL(string: model.snapshot ?? "Изображения нет") else { return }
+    func configure(model: Camera) {
+        camLabel.text = model.name
+        guard let url = URL(string: model.snapshot) else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
+        
     }
     
     override func prepareForReuse() {
         camLabel.text = nil
         camImage.image = nil
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

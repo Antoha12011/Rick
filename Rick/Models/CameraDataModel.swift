@@ -9,23 +9,23 @@ import Foundation
 
 // Структура для представления данных
 struct CameraDataModel: Codable {
-    let success: Bool?
-    let data: CameraData?
+    let success: Bool
+    let data: CameraData
 }
 
 struct CameraData: Codable {
     let room: [String]?
-    let cameras: [Camera]?
+    let cameras: [Camera]
 }
 
 // Структура для представления камеры
 struct Camera: Codable {
-    let name: String?
-    let snapshot: String?
-    let room: String?
-    let id: Int?
-    let favorites: Bool?
-    let rec: Bool?
+    let name: String
+    let snapshot: String
+    let room: String
+    let id: Int
+    let favorites: Bool
+    let rec: Bool
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
@@ -35,7 +35,7 @@ struct Camera: Codable {
         case favorites = "favorites"
         case rec = "rec"
     }
-  
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decode(String.self, forKey: .name)

@@ -14,7 +14,7 @@ class CamerasViewController: UIViewController {
     
     private var networkService = NetworkService()
     
-    var cam = [Camera]()
+    var cam: [Camera] = []
     
     @IBOutlet weak var camTableView: UITableView!
     
@@ -34,10 +34,10 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CamerasCell
-        
-        cell.camLabel.text = cam[indexPath.row].name
-        cell.configureKing(cam[indexPath.row])
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? CamerasCell else {
+            return UITableViewCell()
+        }
+        cell.configure(model: cam[indexPath.row])
         return cell
         
     }
