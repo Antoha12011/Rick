@@ -28,7 +28,7 @@ class DoorsCell: UITableViewCell {
         }
         set {
             var frame =  newValue
-            frame.size.height -= 20
+            frame.size.height -= 10
             super.frame = frame
         }
     }

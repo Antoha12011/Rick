@@ -156,7 +156,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LM6-hJ-HdB">
-                                <rect key="frame" x="0.0" y="232" width="414" height="664"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="728"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoorsCell" rowHeight="120" id="p3X-2K-rFQ" customClass="DoorsCell" customModule="Rick" customModuleProvider="target">
@@ -239,7 +239,7 @@
                             <constraint firstItem="Rgb-ac-mZQ" firstAttribute="top" secondItem="7Fb-HK-ZUu" secondAttribute="top" constant="30" id="bRr-bN-yT5"/>
                             <constraint firstItem="7Fb-HK-ZUu" firstAttribute="trailing" secondItem="Rgb-ac-mZQ" secondAttribute="trailing" constant="80" id="eKt-n1-YxZ"/>
                             <constraint firstItem="EbY-jg-kNG" firstAttribute="top" secondItem="7Fb-HK-ZUu" secondAttribute="top" constant="30" id="esC-sT-1rT"/>
-                            <constraint firstItem="LM6-hJ-HdB" firstAttribute="top" secondItem="7Fb-HK-ZUu" secondAttribute="top" constant="140" id="iOJ-Cg-fdy"/>
+                            <constraint firstItem="LM6-hJ-HdB" firstAttribute="top" secondItem="7Fb-HK-ZUu" secondAttribute="top" constant="76" id="iOJ-Cg-fdy"/>
                             <constraint firstItem="LM6-hJ-HdB" firstAttribute="leading" secondItem="7Fb-HK-ZUu" secondAttribute="leading" id="oiq-pJ-pHO"/>
                             <constraint firstAttribute="trailing" secondItem="R6X-IR-4sl" secondAttribute="trailing" id="yYT-cl-AkE"/>
                         </constraints>

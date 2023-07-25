@@ -17,7 +17,7 @@ class DetailDomofonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
         detailBackgroundView.layer.cornerRadius = 10
     }
 }
