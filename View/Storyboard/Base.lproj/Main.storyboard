@@ -193,7 +193,7 @@
                                         <connections>
                                             <outlet property="doorLabel" destination="siB-0e-U8k" id="INH-De-cQ6"/>
                                             <outlet property="lockImageView" destination="4qG-eo-iB8" id="Sav-mG-t9J"/>
-                                            <segue destination="tF6-gV-4Y3" kind="show" id="gdo-ag-yvu"/>
+                                            <segue destination="vrh-fC-ZaK" kind="show" id="gdo-ag-yvu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -255,7 +255,7 @@
             </objects>
             <point key="canvasLocation" x="844.92753623188412" y="-35.491071428571423"/>
         </scene>
-        <!--Detail Domofon View Controller-->
+        <!--Настройки-->
         <scene sceneID="s4b-0i-Zio">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="tF6-gV-4Y3" customClass="DetailDomofonViewController" customModule="Rick" customModuleProvider="target" sceneMemberID="viewController">
@@ -276,7 +276,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nz-Jy-N1C">
-                                <rect key="frame" x="10" y="745" width="394" height="111"/>
+                                <rect key="frame" x="10" y="696" width="394" height="111"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="111" id="DdT-Z7-agq"/>
@@ -284,8 +284,8 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="keyDoor" imagePlacement="top" subtitle="Открыть дверь" titleAlignment="automatic">
                                     <attributedString key="attributedTitle"/>
-                                    <fontDescription key="subtitleFontDescription" type="system" weight="light" pointSize="20"/>
-                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                    <fontDescription key="subtitleFontDescription" type="system" weight="light" pointSize="18"/>
+                                    <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="openDoorBtn:" destination="tF6-gV-4Y3" eventType="touchUpInside" id="5tO-5C-Gz8"/>
@@ -306,7 +306,9 @@
                             <constraint firstItem="98O-6y-e5b" firstAttribute="trailing" secondItem="7Nz-Jy-N1C" secondAttribute="trailing" constant="10" id="vdc-Py-sTe"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Настройки" selectedImage="Line 68" id="cul-MR-kB4"/>
                     <navigationItem key="navigationItem" id="eap-kF-5ro"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="detaiLabel" destination="bwV-Fk-nIQ" id="d6G-OC-jY7"/>
                         <outlet property="detailImage" destination="nfK-a4-8l0" id="hIj-ud-bJc"/>
@@ -315,7 +317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSJ-jB-oyq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1605.7971014492755" y="-35.491071428571423"/>
+            <point key="canvasLocation" x="2399" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iok-9F-exn">
@@ -341,11 +343,32 @@
             </objects>
             <point key="canvasLocation" x="-654" y="-35"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="3gU-7y-v6w">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="vrh-fC-ZaK" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="yj8-yK-VWe"/>
+                    <tabBar key="tabBar" contentMode="scaleAspectFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="Line 68" id="hBu-hi-aH4">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="tF6-gV-4Y3" kind="relationship" relationship="viewControllers" id="h2h-XB-FR1"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lh2-hM-dex" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1605.7971014492755" y="-35.491071428571423"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="5fl-lz-17U"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Line 68" width="25" height="9"/>
         <image name="keyDoor" width="40" height="40"/>
         <image name="lockon" width="26" height="24"/>
         <image name="starFavorit" width="24" height="24"/>
