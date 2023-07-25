@@ -12,6 +12,8 @@ class CamerasCell: UITableViewCell {
     
     @IBOutlet weak var camImage: UIImageView!
     @IBOutlet weak var camLabel: UILabel!
+    @IBOutlet weak var recLabel: UILabel!
+    @IBOutlet weak var favoritStarImg: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,12 +24,14 @@ class CamerasCell: UITableViewCell {
         camLabel.text = model.name
         guard let url = URL(string: model.snapshot) else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
-        
+       
     }
     
     override func prepareForReuse() {
         camLabel.text = nil
         camImage.image = nil
+        recLabel.text = nil
+        favoritStarImg.image = nil
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
