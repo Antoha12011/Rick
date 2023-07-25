@@ -23,9 +23,18 @@ struct Camera: Codable {
     let name: String
     let snapshot: String
     let room: String
-    let id: Int
+    let id: Int?
     let favorites: Bool
     let rec: Bool
+    
+    init(id: Int, name: String, snapshot: String, favorites: Bool, rec: Bool, room: String ) {
+        self.id = id
+        self.name = name
+        self.favorites = favorites
+        self.rec = rec
+        self.snapshot = snapshot
+        self.room = room
+    }
     
     enum CodingKeys: String, CodingKey {
         case name = "name"
