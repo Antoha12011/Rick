@@ -17,13 +17,13 @@ class DetailDomofonViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
-//        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
-//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
-//        navigationController?.navigationBar.topItem?.title = ""
         
         openDoor.layer.cornerRadius = 10
     }
     @IBAction func openDoorBtn(_ sender: Any) {
         
+    }
+    
+    @IBAction func returnBtn(_ sender: Any) {
     }
 }

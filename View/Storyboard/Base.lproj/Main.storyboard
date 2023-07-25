@@ -293,7 +293,50 @@
                             </button>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybj-lW-tzx">
                                 <rect key="frame" x="0.0" y="821" width="414" height="75"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Настройки" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lmh-DO-mXL">
+                                        <rect key="frame" x="50" y="28" width="314" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                        <color key="textColor" red="0.3853696842783505" green="0.3853696842783505" blue="0.3853696842783505" alpha="0.58176551870748294" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Line 68" translatesAutoresizingMaskIntoConstraints="NO" id="Oua-Qv-S8h">
+                                        <rect key="frame" x="195" y="8" width="25" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="iVQ-bo-dZB"/>
+                                            <constraint firstAttribute="height" constant="18" id="pKa-vg-afM"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blackscreen" translatesAutoresizingMaskIntoConstraints="NO" id="AE0-9M-E4f">
+                                        <rect key="frame" x="357" y="18" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="PPm-qe-GJF"/>
+                                            <constraint firstAttribute="height" constant="32" id="s2A-1R-xo0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ob1-BX-UEh">
+                                        <rect key="frame" x="25" y="12" width="48" height="38"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="arrow_back"/>
+                                        <connections>
+                                            <action selector="returnBtn:" destination="tF6-gV-4Y3" eventType="touchUpInside" id="WNh-pN-9VQ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Oua-Qv-S8h" secondAttribute="trailing" constant="194" id="5GF-GT-raB"/>
+                                    <constraint firstItem="Ob1-BX-UEh" firstAttribute="leading" secondItem="Ybj-lW-tzx" secondAttribute="leading" constant="25" id="5uZ-21-I7U"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ob1-BX-UEh" secondAttribute="bottom" constant="25" id="CHK-CH-tqV"/>
+                                    <constraint firstItem="Oua-Qv-S8h" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ob1-BX-UEh" secondAttribute="trailing" constant="8" symbolic="YES" id="GO3-ui-vn4"/>
+                                    <constraint firstItem="lmh-DO-mXL" firstAttribute="leading" secondItem="Ybj-lW-tzx" secondAttribute="leading" constant="50" id="SBf-Co-OlJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="lmh-DO-mXL" secondAttribute="trailing" constant="50" id="YQ3-LL-ens"/>
+                                    <constraint firstAttribute="bottom" secondItem="lmh-DO-mXL" secondAttribute="bottom" constant="25" id="ekn-gP-Z7L"/>
+                                    <constraint firstAttribute="trailing" secondItem="AE0-9M-E4f" secondAttribute="trailing" constant="25" id="fDX-Z4-yg9"/>
+                                    <constraint firstAttribute="bottom" secondItem="AE0-9M-E4f" secondAttribute="bottom" constant="25" id="lkM-vK-9k1"/>
+                                    <constraint firstItem="Oua-Qv-S8h" firstAttribute="leading" secondItem="Ybj-lW-tzx" secondAttribute="leading" constant="195" id="nvs-dT-CPO"/>
+                                    <constraint firstItem="Oua-Qv-S8h" firstAttribute="top" secondItem="Ybj-lW-tzx" secondAttribute="top" constant="8" id="y70-YE-zTZ"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98O-6y-e5b"/>
@@ -355,6 +398,9 @@
         <segue reference="5fl-lz-17U"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Line 68" width="25" height="9"/>
+        <image name="arrow_back" width="24" height="24"/>
+        <image name="blackscreen" width="32" height="32"/>
         <image name="keyDoor" width="40" height="40"/>
         <image name="lockon" width="26" height="24"/>
         <image name="starFavorit" width="24" height="24"/>
