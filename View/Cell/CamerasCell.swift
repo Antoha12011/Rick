@@ -17,14 +17,16 @@ class CamerasCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-    
+        
+        camImage.layer.cornerRadius = 10
+        
     }
     
     func configure(model: CamerasRealm) {
         camLabel.text = model.name
         guard let url = URL(string: model.snapshot ?? "") else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
-       
+        
     }
     
     override func prepareForReuse() {
@@ -39,13 +41,13 @@ class CamerasCell: UITableViewCell {
     }
     
     override open var frame: CGRect {
-     get {
-         return super.frame
-     }
-     set {
-         var frame =  newValue
-         frame.size.height -= 20
-         super.frame = frame
-     }
- }
+        get {
+            return super.frame
+        }
+        set {
+            var frame =  newValue
+            frame.size.height -= 20
+            super.frame = frame
+        }
+    }
 }

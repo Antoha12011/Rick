@@ -155,22 +155,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LM6-hJ-HdB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LM6-hJ-HdB">
                                 <rect key="frame" x="0.0" y="232" width="414" height="664"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="150" id="p3X-2K-rFQ">
-                                        <rect key="frame" x="20" y="55.5" width="374" height="150"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DoorsCell" rowHeight="120" id="p3X-2K-rFQ" customClass="DoorsCell" customModule="Rick" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="55.5" width="374" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="p3X-2K-rFQ" id="DuB-ep-dN9">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="150"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Подъезд 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="siB-0e-U8k">
+                                                    <rect key="frame" x="20" y="41" width="89.5" height="38"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockon" translatesAutoresizingMaskIntoConstraints="NO" id="4qG-eo-iB8">
+                                                    <rect key="frame" x="324" y="31" width="30" height="58"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="SNO-42-eHw"/>
+                                                        <constraint firstAttribute="height" constant="58" id="dJ0-PR-D53"/>
+                                                    </constraints>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                            <constraints>
+                                                <constraint firstItem="4qG-eo-iB8" firstAttribute="top" secondItem="DuB-ep-dN9" secondAttribute="topMargin" constant="20" id="3ax-rd-l59"/>
+                                                <constraint firstItem="siB-0e-U8k" firstAttribute="top" secondItem="DuB-ep-dN9" secondAttribute="topMargin" constant="30" id="6qY-is-Lbu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4qG-eo-iB8" secondAttribute="bottom" constant="20" id="ZNv-fn-3B4"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="siB-0e-U8k" secondAttribute="bottom" constant="30" id="Zow-nc-Kxd"/>
+                                                <constraint firstItem="siB-0e-U8k" firstAttribute="leading" secondItem="DuB-ep-dN9" secondAttribute="leadingMargin" id="gpd-nY-IMG"/>
+                                                <constraint firstItem="4qG-eo-iB8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="siB-0e-U8k" secondAttribute="trailing" constant="8" symbolic="YES" id="m99-P5-Yri"/>
+                                                <constraint firstItem="4qG-eo-iB8" firstAttribute="trailing" secondItem="DuB-ep-dN9" secondAttribute="trailingMargin" id="yg3-6S-hbC"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="doorLabel" destination="siB-0e-U8k" id="INH-De-cQ6"/>
+                                            <outlet property="lockImageView" destination="4qG-eo-iB8" id="Sav-mG-t9J"/>
                                             <segue destination="tF6-gV-4Y3" kind="show" id="gdo-ag-yvu"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="1EK-GH-cLy" id="8bW-HX-oGg"/>
+                                    <outlet property="delegate" destination="1EK-GH-cLy" id="Gsz-IX-KS1"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EbY-jg-kNG">
                                 <rect key="frame" x="80" y="122" width="97" height="38"/>
@@ -214,10 +245,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мой дом" id="lQd-wg-OSU"/>
+                    <connections>
+                        <outlet property="doorTableView" destination="LM6-hJ-HdB" id="xtK-lM-22f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efB-UU-RUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="845" y="-35"/>
+            <point key="canvasLocation" x="844.92753623188412" y="-35.491071428571423"/>
         </scene>
         <!--Detail Domofon View Controller-->
         <scene sceneID="s4b-0i-Zio">
@@ -288,7 +322,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSJ-jB-oyq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1619" y="-35"/>
+            <point key="canvasLocation" x="1606" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iok-9F-exn">
@@ -317,6 +351,7 @@
     </scenes>
     <resources>
         <image name="key.horizontal.fill" catalog="system" width="128" height="65"/>
+        <image name="lockon" width="26" height="24"/>
         <image name="starFavorit" width="24" height="24"/>
         <image name="Домофон" width="375" height="216"/>
         <systemColor name="labelColor">

@@ -9,6 +9,9 @@ import UIKit
 
 class DoorsCell: UITableViewCell {
 
+    @IBOutlet weak var lockImageView: UIImageView!
+    @IBOutlet weak var doorLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -19,5 +22,14 @@ class DoorsCell: UITableViewCell {
 
         
     }
-
+    override open var frame: CGRect {
+        get {
+            return super.frame
+        }
+        set {
+            var frame =  newValue
+            frame.size.height -= 20
+            super.frame = frame
+        }
+    }
 }
