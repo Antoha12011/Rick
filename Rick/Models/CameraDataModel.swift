@@ -46,5 +46,3 @@ struct Camera: Codable {
         self.rec = try container.decode(Bool.self, forKey: .rec)
     }
 }
-
-

@@ -15,4 +15,3 @@
 //    @Persisted dynamic var favorites = ""
 //    @Persisted dynamic var rec = ""
 //}
-//
