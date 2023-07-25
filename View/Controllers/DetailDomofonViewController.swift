@@ -17,9 +17,9 @@ class DetailDomofonViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.hidesBackButton = true
-        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
-        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
-        navigationController?.navigationBar.topItem?.title = ""
+//        navigationController?.navigationBar.backIndicatorImage = UIImage(systemName: "arrow.backward")
+//        navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(systemName: "arrow.backward")
+//        navigationController?.navigationBar.topItem?.title = ""
         
         openDoor.layer.cornerRadius = 10
     }
