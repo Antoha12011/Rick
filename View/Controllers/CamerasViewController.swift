@@ -19,7 +19,7 @@ class CamerasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.hidesBackButton = true
 //        let realm = try! Realm()
 //        try! realm.write {
 //            realm.deleteAll()

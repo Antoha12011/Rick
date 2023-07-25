@@ -19,9 +19,13 @@ class DoorsCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        
     }
+    
+    override func prepareForReuse() {
+        doorLabel.text = nil
+        lockImageView.image = nil
+    }
+    
     override open var frame: CGRect {
         get {
             return super.frame
