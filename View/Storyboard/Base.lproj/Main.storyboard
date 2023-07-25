@@ -64,41 +64,45 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="nMp-ws-nAo"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Камеры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOX-26-A9N">
-                                <rect key="frame" x="80" y="122" width="73.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Двери" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O6m-1Z-EQL">
-                                <rect key="frame" x="275.5" y="122" width="58.5" height="24"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JE-5g-vOB">
-                                <rect key="frame" x="0.0" y="160" width="200" height="3"/>
+                                <rect key="frame" x="0.0" y="165" width="200" height="3"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137254901963" blue="1" alpha="0.70745642006802723" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="4id-mN-7zL"/>
                                     <constraint firstAttribute="width" constant="200" id="s3l-Y3-G4R"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paT-Zb-u1V">
+                                <rect key="frame" x="80" y="122" width="97" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Камеры">
+                                    <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpO-Ag-SEK">
+                                <rect key="frame" x="252" y="122" width="82" height="38"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Двери">
+                                    <fontDescription key="titleFontDescription" type="system" weight="light" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9Yd-ge-JkI" secondAttribute="bottom" constant="-34" id="2wX-JI-5Js"/>
-                            <constraint firstItem="uOX-26-A9N" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="4IZ-gA-MNW"/>
-                            <constraint firstItem="O6m-1Z-EQL" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="4bN-DO-wAT"/>
                             <constraint firstItem="9Yd-ge-JkI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="7nm-zE-DKJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="O6m-1Z-EQL" secondAttribute="trailing" constant="80" id="Ege-9t-RmE"/>
+                            <constraint firstItem="paT-Zb-u1V" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="GfN-om-EmL"/>
                             <constraint firstItem="9Yd-ge-JkI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="66" id="HU0-r1-Vkj"/>
-                            <constraint firstItem="uOX-26-A9N" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="RXy-ux-2f2"/>
-                            <constraint firstItem="5JE-5g-vOB" firstAttribute="top" secondItem="uOX-26-A9N" secondAttribute="bottom" constant="14" id="f7n-WH-ktx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kpO-Ag-SEK" secondAttribute="trailing" constant="80" id="S0v-Hb-Nfa"/>
+                            <constraint firstItem="5JE-5g-vOB" firstAttribute="top" secondItem="paT-Zb-u1V" secondAttribute="bottom" constant="5" id="Vol-CG-eOY"/>
+                            <constraint firstItem="kpO-Ag-SEK" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="paT-Zb-u1V" secondAttribute="trailing" constant="8" symbolic="YES" id="iWW-Wd-9GM"/>
                             <constraint firstItem="5JE-5g-vOB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="kJu-nL-mXn"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9Yd-ge-JkI" secondAttribute="trailing" id="khk-n3-CJQ"/>
-                            <constraint firstItem="O6m-1Z-EQL" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="uOX-26-A9N" secondAttribute="trailing" constant="8" symbolic="YES" id="rwt-zw-Wb1"/>
+                            <constraint firstItem="paT-Zb-u1V" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="xiv-I3-27B"/>
+                            <constraint firstItem="kpO-Ag-SEK" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="xsn-C4-RBB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Мой дом" id="fbo-oh-bzo"/>
@@ -209,6 +213,9 @@
     </scenes>
     <resources>
         <image name="key.horizontal.fill" catalog="system" width="128" height="65"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
