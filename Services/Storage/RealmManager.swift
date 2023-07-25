@@ -26,6 +26,10 @@ class RealmManager {
                     let realmDataObject = CamerasRealm()
                     realmDataObject.id = item.id!
                     realmDataObject.name = item.name
+                    realmDataObject.snapshot = item.snapshot
+                    realmDataObject.favorites = item.favorites
+                    realmDataObject.rec = item.rec
+                    realmDataObject.room = item.room
                     realm.add(realmDataObject, update: .all)
                 }
             }
