@@ -11,13 +11,14 @@ class DetailDomofonViewController: UIViewController {
 
     @IBOutlet weak var detaiLabel: UILabel!
     @IBOutlet weak var detailImage: UIImageView!
-    @IBOutlet weak var openDoorLabel: UILabel!
-    @IBOutlet weak var imageWithKey: UIImageView!
-    @IBOutlet weak var detailBackgroundView: UIView!
+    @IBOutlet weak var openDoor: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
-        detailBackgroundView.layer.cornerRadius = 10
+        openDoor.layer.cornerRadius = 10
+    }
+    @IBAction func openDoorBtn(_ sender: Any) {
+        
     }
 }

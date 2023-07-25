@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -270,62 +269,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="loA-9o-faY">
-                                <rect key="frame" x="15" y="650" width="384" height="216"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0gv-pE-sRP">
-                                        <rect key="frame" x="150" y="10" width="84" height="146.5"/>
-                                        <imageReference key="image" image="key.horizontal.fill" catalog="system" symbolScale="small"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Открыть дверь" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOz-Qx-929">
-                                        <rect key="frame" x="138.5" y="178" width="107.5" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstItem="0gv-pE-sRP" firstAttribute="centerX" secondItem="loA-9o-faY" secondAttribute="centerX" id="IjJ-hi-zku"/>
-                                    <constraint firstAttribute="bottom" secondItem="0gv-pE-sRP" secondAttribute="bottom" constant="55" id="Knj-IY-w97"/>
-                                    <constraint firstItem="0gv-pE-sRP" firstAttribute="top" secondItem="loA-9o-faY" secondAttribute="top" constant="5" id="Yco-co-GCf"/>
-                                    <constraint firstAttribute="trailing" secondItem="0gv-pE-sRP" secondAttribute="trailing" constant="150" id="acK-Kp-l2R"/>
-                                    <constraint firstItem="0gv-pE-sRP" firstAttribute="leading" secondItem="loA-9o-faY" secondAttribute="leading" constant="150" id="e9J-WQ-9mb"/>
-                                    <constraint firstItem="SOz-Qx-929" firstAttribute="centerX" secondItem="loA-9o-faY" secondAttribute="centerX" id="ple-dN-U11"/>
-                                    <constraint firstAttribute="bottom" secondItem="SOz-Qx-929" secondAttribute="bottom" constant="20" id="ylt-fV-u3E"/>
-                                </constraints>
-                            </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Домофон" translatesAutoresizingMaskIntoConstraints="NO" id="nfK-a4-8l0">
                                 <rect key="frame" x="0.0" y="115" width="414" height="216"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="iuQ-ku-4rv"/>
+                                </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Nz-Jy-N1C">
+                                <rect key="frame" x="10" y="745" width="394" height="111"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="DdT-Z7-agq"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="keyDoor" imagePlacement="top" subtitle="Открыть дверь" titleAlignment="automatic">
+                                    <attributedString key="attributedTitle"/>
+                                    <fontDescription key="subtitleFontDescription" type="system" weight="light" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="openDoorBtn:" destination="tF6-gV-4Y3" eventType="touchUpInside" id="5tO-5C-Gz8"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98O-6y-e5b"/>
                         <color key="backgroundColor" systemColor="systemGray5Color"/>
                         <constraints>
                             <constraint firstItem="nfK-a4-8l0" firstAttribute="leading" secondItem="98O-6y-e5b" secondAttribute="leading" id="0Nu-NI-aGh"/>
-                            <constraint firstItem="98O-6y-e5b" firstAttribute="bottom" secondItem="loA-9o-faY" secondAttribute="bottom" constant="30" id="9UP-2a-PU3"/>
+                            <constraint firstItem="98O-6y-e5b" firstAttribute="bottom" secondItem="7Nz-Jy-N1C" secondAttribute="bottom" constant="40" id="9vL-hG-rrZ"/>
                             <constraint firstItem="nfK-a4-8l0" firstAttribute="top" secondItem="bwV-Fk-nIQ" secondAttribute="bottom" constant="25" id="ID1-Ih-Hbd"/>
                             <constraint firstItem="bwV-Fk-nIQ" firstAttribute="leading" secondItem="98O-6y-e5b" secondAttribute="leading" constant="10" id="IQZ-tm-wfg"/>
                             <constraint firstItem="98O-6y-e5b" firstAttribute="trailing" secondItem="nfK-a4-8l0" secondAttribute="trailing" id="Ndp-yk-S8j"/>
                             <constraint firstItem="bwV-Fk-nIQ" firstAttribute="top" secondItem="98O-6y-e5b" secondAttribute="top" constant="60" id="VSA-Gf-m2h"/>
                             <constraint firstItem="bwV-Fk-nIQ" firstAttribute="centerX" secondItem="9FQ-rD-a6c" secondAttribute="centerX" id="WlK-LZ-XVe"/>
-                            <constraint firstItem="loA-9o-faY" firstAttribute="leading" secondItem="98O-6y-e5b" secondAttribute="leading" constant="15" id="XoI-Wt-Nk2"/>
-                            <constraint firstItem="loA-9o-faY" firstAttribute="top" secondItem="98O-6y-e5b" secondAttribute="top" constant="650" id="Xz2-4E-kab"/>
-                            <constraint firstItem="98O-6y-e5b" firstAttribute="trailing" secondItem="loA-9o-faY" secondAttribute="trailing" constant="15" id="mPG-Cf-8Sw"/>
+                            <constraint firstItem="7Nz-Jy-N1C" firstAttribute="leading" secondItem="98O-6y-e5b" secondAttribute="leading" constant="10" id="YTE-2v-cyh"/>
+                            <constraint firstItem="98O-6y-e5b" firstAttribute="trailing" secondItem="7Nz-Jy-N1C" secondAttribute="trailing" constant="10" id="vdc-Py-sTe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eap-kF-5ro"/>
                     <connections>
                         <outlet property="detaiLabel" destination="bwV-Fk-nIQ" id="d6G-OC-jY7"/>
-                        <outlet property="detailBackgroundView" destination="loA-9o-faY" id="pJl-dk-S3q"/>
                         <outlet property="detailImage" destination="nfK-a4-8l0" id="hIj-ud-bJc"/>
-                        <outlet property="imageWithKey" destination="0gv-pE-sRP" id="Pex-Uk-aic"/>
-                        <outlet property="openDoorLabel" destination="SOz-Qx-929" id="V7G-Xm-bcr"/>
+                        <outlet property="openDoor" destination="7Nz-Jy-N1C" id="hDx-DW-pQ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSJ-jB-oyq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606" y="-35"/>
+            <point key="canvasLocation" x="1605.7971014492755" y="-35.491071428571423"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iok-9F-exn">
@@ -353,11 +343,10 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JRs-U5-LxA"/>
         <segue reference="5fl-lz-17U"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="key.horizontal.fill" catalog="system" width="128" height="65"/>
+        <image name="keyDoor" width="40" height="40"/>
         <image name="lockon" width="26" height="24"/>
         <image name="starFavorit" width="24" height="24"/>
         <image name="Домофон" width="375" height="216"/>
