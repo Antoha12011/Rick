@@ -46,12 +46,12 @@
                                                     <color key="textColor" systemColor="systemRedColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-wl-bCs">
-                                                    <rect key="frame" x="329" y="10.5" width="25" height="25"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starFavorit" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-wl-bCs">
+                                                    <rect key="frame" x="329" y="11" width="35" height="35"/>
                                                     <color key="tintColor" systemColor="systemYellowColor"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="25" id="0Ze-pr-D61"/>
-                                                        <constraint firstAttribute="height" constant="25" id="mMw-wp-TaS"/>
+                                                        <constraint firstAttribute="width" constant="35" id="0Ze-pr-D61"/>
+                                                        <constraint firstAttribute="height" constant="35" id="mMw-wp-TaS"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -65,7 +65,7 @@
                                                 <constraint firstItem="y5n-C1-m36" firstAttribute="top" secondItem="T2f-H5-O8Z" secondAttribute="bottom" constant="20" id="PKj-D5-UGU"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aMh-Ch-pjY" secondAttribute="trailing" constant="20" symbolic="YES" id="Pxp-5m-xO1"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="y5n-C1-m36" secondAttribute="trailing" constant="100" id="Zhz-tv-3XH"/>
-                                                <constraint firstItem="TEg-wl-bCs" firstAttribute="trailing" secondItem="g0j-sz-p6J" secondAttribute="trailingMargin" id="fUH-np-ore"/>
+                                                <constraint firstItem="TEg-wl-bCs" firstAttribute="trailing" secondItem="g0j-sz-p6J" secondAttribute="trailingMargin" constant="10" id="fUH-np-ore"/>
                                                 <constraint firstItem="aMh-Ch-pjY" firstAttribute="top" secondItem="g0j-sz-p6J" secondAttribute="topMargin" id="jUR-IT-ta5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="y5n-C1-m36" secondAttribute="bottom" constant="20" id="m82-FI-wFt"/>
                                                 <constraint firstItem="T2f-H5-O8Z" firstAttribute="top" secondItem="g0j-sz-p6J" secondAttribute="top" id="v20-TW-n2X"/>
@@ -245,7 +245,7 @@
     </scenes>
     <resources>
         <image name="key.horizontal.fill" catalog="system" width="128" height="65"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="starFavorit" width="24" height="24"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

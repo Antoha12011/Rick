@@ -73,4 +73,21 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 280
     }
+    
+  private func handleMarkAsFavourite() {
+        print("Marked as favourite")
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
+            -> UISwipeActionsConfiguration? {
+            let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+                self.handleMarkAsFavourite()
+                completionHandler(true)
+            }
+            deleteAction.image = UIImage(named: "star")
+            deleteAction.backgroundColor = .white
+            let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+            return configuration
+    }
+    
 }
