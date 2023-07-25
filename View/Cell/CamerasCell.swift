@@ -17,6 +17,7 @@ class CamerasCell: UITableViewCell {
         super.awakeFromNib()
         
         camImage.layer.cornerRadius = 10
+        
     }
     
     func configure(model: CamerasRealm) {
