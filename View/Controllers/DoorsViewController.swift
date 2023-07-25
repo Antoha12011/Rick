@@ -8,7 +8,7 @@
 import UIKit
 
 class DoorsViewController: UIViewController {
-
+    
     
     @IBOutlet weak var doorTableView: UITableView!
     
@@ -38,21 +38,32 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         return 120
     }
     
-    private func handleMarkAsFavourite() {
-          print("Marked as favourite")
-      }
-      
-      func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
-              -> UISwipeActionsConfiguration? {
-              let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-                  self.handleMarkAsFavourite()
-                  completionHandler(true)
-              }
-              deleteAction.image = UIImage(named: "star")
-              deleteAction.backgroundColor = .white
-              let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
-              return configuration
-      }
+    private func handleMarkAsFavorite() {
+        print("Marked as favourite")
+    }
+    
+    private func handleMarkAsEdit() {
+        print("Marked as edit")
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let favoritAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            self.handleMarkAsFavorite()
+            completionHandler(true)
+        }
+        favoritAction.image = UIImage(named: "star")
+        favoritAction.backgroundColor = .white
+        
+        let renameAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            self.handleMarkAsEdit()
+            completionHandler(true)
+        }
+        renameAction.image = UIImage(named: "edit")
+        renameAction.backgroundColor = .white
+        
+        let configuration = UISwipeActionsConfiguration(actions: [favoritAction, renameAction])
+        return configuration
+    }
     
     
 }
