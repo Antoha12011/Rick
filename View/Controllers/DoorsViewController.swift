@@ -77,5 +77,11 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         return configuration
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "DetailDomofonViewController")
+        self.present(vc, animated: false, completion: nil);
+    }
+    
     
 }
