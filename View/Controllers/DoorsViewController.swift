@@ -20,22 +20,34 @@ class DoorsViewController: UIViewController {
 
 extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if section == 0 { return 3 }
+        else if section == 1 { return 1 }
+        else { return 1 }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "DoorsCell", for: indexPath) as? DoorsCell else {
-            return UITableViewCell()
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DoorsCell", for: indexPath) as! DoorsCell
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.masksToBounds = true
+            return cell
+            
+        } else if indexPath.section == 1 {
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: "DoorsCellWithImage", for: indexPath) as! DoorsWithImageCell
+            cell2.contentView.layer.cornerRadius = 10
+            cell2.contentView.layer.masksToBounds = true
+            return cell2
         }
-        
-        cell.contentView.layer.cornerRadius = 10
-        cell.contentView.layer.masksToBounds = true
-        
-        return cell
+        return UITableViewCell()
     }
+    //    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
+        return indexPath.section == 0 ? CGFloat(120.0) : CGFloat(280.0)
     }
     
     private func handleMarkAsFavorite() {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		123296552A6FEA63004CEFF4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123296542A6FEA63004CEFF4 /* RealmManager.swift */; };
+		12B3AA2C2A7096A300E3C0A4 /* DoorsWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B3AA2B2A7096A300E3C0A4 /* DoorsWithImageCell.swift */; };
 		12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */; };
 		12DEC8B72A6ECB7C003DE5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */; };
 		12DEC8B92A6ECB7C003DE5EF /* CamerasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B82A6ECB7C003DE5EF /* CamerasViewController.swift */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		123296542A6FEA63004CEFF4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		12B3AA2B2A7096A300E3C0A4 /* DoorsWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWithImageCell.swift; sourceTree = "<group>"; };
 		12DEC8B12A6ECB7C003DE5EF /* Rick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				12DEC8DC2A6ED154003DE5EF /* CamerasCell.swift */,
 				12FC467A2A702F63002FAE3A /* DoorsCell.swift */,
+				12B3AA2B2A7096A300E3C0A4 /* DoorsWithImageCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				12DEC8D82A6ED0A5003DE5EF /* StorageLayer.swift in Sources */,
 				12DEC8CF2A6ED02F003DE5EF /* CameraDataModel.swift in Sources */,
 				12DEC8B72A6ECB7C003DE5EF /* SceneDelegate.swift in Sources */,
+				12B3AA2C2A7096A300E3C0A4 /* DoorsWithImageCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
