@@ -38,7 +38,6 @@ final class CamerasViewController: UIViewController {
     }
     
   private func fetchDataFromNetwork() {
-          // Извлеките данные из сети и сохраните их в Realm
            let networkData: [Camera] = [
             Camera(id: 1, name: "Camera 1", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: "FIRST"),
             Camera(id: 3, name: "Camera 2", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: ""),
@@ -68,8 +67,6 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
-//        let cam = cam[indexPath.row]
-//        cell.camLabel.text = cam.name
         cell.configure(model: cam[indexPath.row])
         
         return cell
@@ -91,5 +88,4 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
             let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
             return configuration
     }
-    
 }

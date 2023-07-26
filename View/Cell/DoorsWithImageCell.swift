@@ -14,6 +14,7 @@ final class DoorsWithImageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        visualImg.clipsToBounds = true
     }
     
     override func prepareForReuse() {
