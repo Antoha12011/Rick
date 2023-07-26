@@ -83,8 +83,6 @@
 			children = (
 				12DEC8C22A6ECB7D003DE5EF /* Info.plist */,
 				12DEC8B32A6ECB7C003DE5EF /* Rick */,
-				12DEC8D92A6ED0D5003DE5EF /* View */,
-				12DEC8D62A6ED083003DE5EF /* Services */,
 				12DEC8B22A6ECB7C003DE5EF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,7 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				12DEC8D32A6ED05D003DE5EF /* SupportingFiles */,
+				12DEC8D92A6ED0D5003DE5EF /* View */,
 				12DEC8D22A6ED04C003DE5EF /* Models */,
+				12DEC8D62A6ED083003DE5EF /* Services */,
 			);
 			path = Rick;
 			sourceTree = "<group>";
@@ -121,7 +121,6 @@
 				12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */,
 				12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */,
 				12DEC8BD2A6ECB7D003DE5EF /* Assets.xcassets */,
-				12DEC8BF2A6ECB7D003DE5EF /* LaunchScreen.storyboard */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -138,19 +137,20 @@
 		12DEC8D92A6ED0D5003DE5EF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				12DEC8DA2A6ED0E0003DE5EF /* Storyboards */,
 				12DEC8DE2A6ED159003DE5EF /* Cell */,
 				12DEC8DB2A6ED0EF003DE5EF /* Controllers */,
-				12DEC8DA2A6ED0E0003DE5EF /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		12DEC8DA2A6ED0E0003DE5EF /* Storyboard */ = {
+		12DEC8DA2A6ED0E0003DE5EF /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
 				12DEC8BA2A6ECB7C003DE5EF /* Main.storyboard */,
+				12DEC8BF2A6ECB7D003DE5EF /* LaunchScreen.storyboard */,
 			);
-			path = Storyboard;
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		12DEC8DB2A6ED0EF003DE5EF /* Controllers */ = {
