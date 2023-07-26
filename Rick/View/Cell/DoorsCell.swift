@@ -10,7 +10,7 @@ import UIKit
 final class DoorsCell: UITableViewCell {
     
     @IBOutlet weak var lockImageView: UIImageView!
-    @IBOutlet weak var doorLabel: UILabel!
+    @IBOutlet weak var doorTextField: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +22,7 @@ final class DoorsCell: UITableViewCell {
     }
     
     override func prepareForReuse() {
-        doorLabel.text = nil
+        doorTextField.text = nil
         lockImageView.image = nil
     }
     

@@ -24,9 +24,9 @@ final class DoorsViewController: UIViewController {
         navBar.shadowImage = UIImage()
     }
     
-    private func handleMarkAsEdit() {
-        print("Marked as edit")
-    }
+//    private func handleMarkAsEdit() {
+//        print("Marked as edit")
+//    }
     
 }
 
@@ -70,7 +70,11 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         favoritAction.backgroundColor = .white
         
         let renameAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-            self.handleMarkAsEdit()
+            if let cell = tableView.cellForRow(at: indexPath) as? DoorsCell {
+                cell.doorTextField.isEnabled = true // Разрешаем редактирование текста в ячейке при свайпе
+                cell.doorTextField.becomeFirstResponder() // Показываем клавиатуру
+            }
+//            self.handleMarkAsEdit()
             completionHandler(true)
         }
         renameAction.image = UIImage(named: "edit")
@@ -85,6 +89,4 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         let vc = storyboard.instantiateViewController(withIdentifier: "DetailDomofonViewController")
         self.present(vc, animated: false, completion: nil);
     }
-    
-    
 }
