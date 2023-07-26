@@ -9,26 +9,28 @@ import UIKit
 
 final class DoorsViewController: UIViewController {
     
+    // MARK: - Outlets
     
     @IBOutlet weak var doorTableView: UITableView!
-    
     @IBOutlet weak var navBar: UINavigationBar!
-    @IBAction func camBtn(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil);
-        let vc = storyboard.instantiateViewController(withIdentifier: "CamerasViewController")
-        self.present(vc, animated: false, completion: nil);
-    }
+    
+    // MARK: - Override
     
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.shadowImage = UIImage()
     }
     
-//    private func handleMarkAsEdit() {
-//        print("Marked as edit")
-//    }
+    // MARK: - Actions
     
+    @IBAction func camBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "CamerasViewController")
+        self.present(vc, animated: false, completion: nil);
+    }
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -56,7 +58,6 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
-    //    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.section == 0 ? CGFloat(120.0) : CGFloat(280.0)
@@ -71,10 +72,9 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         
         let renameAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
             if let cell = tableView.cellForRow(at: indexPath) as? DoorsCell {
-                cell.doorTextField.isEnabled = true // Разрешаем редактирование текста в ячейке при свайпе
-                cell.doorTextField.becomeFirstResponder() // Показываем клавиатуру
+                cell.doorTextField.isEnabled = true
+                cell.doorTextField.becomeFirstResponder()
             }
-//            self.handleMarkAsEdit()
             completionHandler(true)
         }
         renameAction.image = UIImage(named: "edit")

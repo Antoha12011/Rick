@@ -9,8 +9,12 @@ import UIKit
 
 final class DoorsWithImageCell: UITableViewCell {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var visualImg: UIImageView!
     @IBOutlet weak var lockImg: UIImageView!
+    
+    // MARK: - Override
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,9 +24,5 @@ final class DoorsWithImageCell: UITableViewCell {
     override func prepareForReuse() {
         visualImg.image = nil
         visualImg.image = nil
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 }

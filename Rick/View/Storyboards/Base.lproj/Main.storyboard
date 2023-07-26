@@ -340,7 +340,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efB-UU-RUM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="844.92753623188412" y="-35.491071428571423"/>
+            <point key="canvasLocation" x="794" y="-35"/>
         </scene>
         <!--Detail Domofon View Controller-->
         <scene sceneID="s4b-0i-Zio">
@@ -451,7 +451,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSJ-jB-oyq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1583" y="-35"/>
+            <point key="canvasLocation" x="1474" y="-35"/>
         </scene>
     </scenes>
     <resources>

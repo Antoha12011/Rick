@@ -14,7 +14,7 @@ final class RealmManager {
     
     static let shared = RealmManager()
     
-    private init() {}
+    init() {}
     
     // MARK: - Public Methods
     
@@ -36,5 +36,16 @@ final class RealmManager {
         } catch let error as NSError {
             print("Error saving data to Realm: \(error)")
         }
+    }
+    
+    func fetchDataFromNetwork() {
+        let networkData: [Camera] = [
+            Camera(id: 1, name: "Camera 1", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: "FIRST"),
+            Camera(id: 3, name: "Camera 2", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: ""),
+            Camera(id: 2, name: "Camera 45", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: false, rec: true, room: "FIRST"),
+            Camera(id: 6, name: "Camera 89", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: "FIRST")
+        ]
+        
+        RealmManager.shared.saveDataToRealm(data: networkData)
     }
 }

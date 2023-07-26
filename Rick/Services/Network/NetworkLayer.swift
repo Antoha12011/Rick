@@ -8,7 +8,6 @@
 import Foundation
 import UIKit
 
-
 final class NetworkService {
     func getData() {
         var request = URLRequest(url: URL(string: "http://cars.cprogroup.ru/api/rubetek/cameras/")!,timeoutInterval: Double.infinity)
