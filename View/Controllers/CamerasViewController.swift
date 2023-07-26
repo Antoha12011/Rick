@@ -17,6 +17,11 @@ class CamerasViewController: UIViewController {
         
     @IBOutlet weak var camTableView: UITableView!
     
+    @IBAction func doorBtn(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil);
+        let vc = storyboard.instantiateViewController(withIdentifier: "DoorsViewController")
+        self.present(vc, animated: false, completion: nil);
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
