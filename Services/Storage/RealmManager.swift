@@ -8,23 +8,23 @@
 import Foundation
 import RealmSwift
 
-class RealmManager {
+final class RealmManager {
     
     // MARK: - Properties
-        
+    
     static let shared = RealmManager()
-
+    
     private init() {}
     
     // MARK: - Public Methods
-        
+    
     func saveDataToRealm(data: [Camera]) {
         do {
             let realm = try! Realm()
             try realm.write {
                 for item in data {
                     let realmDataObject = CamerasRealm()
-                    realmDataObject.id = item.id!
+                    realmDataObject.id = item.id
                     realmDataObject.name = item.name
                     realmDataObject.snapshot = item.snapshot
                     realmDataObject.favorites = item.favorites

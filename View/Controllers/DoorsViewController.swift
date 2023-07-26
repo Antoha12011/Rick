@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DoorsViewController: UIViewController {
+final class DoorsViewController: UIViewController {
     
     
     @IBOutlet weak var doorTableView: UITableView!
@@ -22,6 +22,15 @@ class DoorsViewController: UIViewController {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
     }
+    
+    private func handleMarkAsFavorite() {
+        print("Marked as favourite")
+    }
+    
+    private func handleMarkAsEdit() {
+        print("Marked as edit")
+    }
+    
 }
 
 extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -54,14 +63,6 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.section == 0 ? CGFloat(120.0) : CGFloat(280.0)
-    }
-    
-    private func handleMarkAsFavorite() {
-        print("Marked as favourite")
-    }
-    
-    private func handleMarkAsEdit() {
-        print("Marked as edit")
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {

@@ -7,8 +7,8 @@
 
 import UIKit
 
-class DoorsCell: UITableViewCell {
-
+final class DoorsCell: UITableViewCell {
+    
     @IBOutlet weak var lockImageView: UIImageView!
     @IBOutlet weak var doorLabel: UILabel!
     
@@ -16,7 +16,7 @@ class DoorsCell: UITableViewCell {
         super.awakeFromNib()
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -26,7 +26,7 @@ class DoorsCell: UITableViewCell {
         lockImageView.image = nil
     }
     
-    override open var frame: CGRect {
+    override public var frame: CGRect {
         get {
             return super.frame
         }

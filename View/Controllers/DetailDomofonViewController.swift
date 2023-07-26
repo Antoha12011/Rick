@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DetailDomofonViewController: UIViewController {
+final class DetailDomofonViewController: UIViewController {
     
     @IBOutlet weak var detaiLabel: UILabel!
     @IBOutlet weak var detailImage: UIImageView!

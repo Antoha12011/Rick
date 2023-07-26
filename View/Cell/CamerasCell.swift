@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class CamerasCell: UITableViewCell {
+final class CamerasCell: UITableViewCell {
     
     @IBOutlet weak var camImage: UIImageView!
     @IBOutlet weak var camLabel: UILabel!
@@ -40,7 +40,7 @@ class CamerasCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    override open var frame: CGRect {
+    override public var frame: CGRect {
         get {
             return super.frame
         }

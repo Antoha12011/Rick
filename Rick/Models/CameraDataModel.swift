@@ -22,10 +22,9 @@ struct CameraData: Codable {
 struct Camera: Codable {
     let name: String
     let snapshot: String
-    let room: String
-    let id: Int?
-    let favorites: Bool
-    let rec: Bool
+    let room: String?
+    let id: Int
+    let favorites, rec: Bool
     
     init(id: Int, name: String, snapshot: String, favorites: Bool, rec: Bool, room: String ) {
         self.id = id

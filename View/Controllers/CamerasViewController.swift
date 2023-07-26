@@ -8,10 +8,7 @@
 import UIKit
 import RealmSwift
 
-//  http://cars.cprogroup.ru/api/rubetek/cameras/ --> Cameras JSON
-//  http://cars.cprogroup.ru/api/rubetek/doors/ --> Doors JSON
-
-class CamerasViewController: UIViewController {
+final class CamerasViewController: UIViewController {
     
     var cam: Results<CamerasRealm>!
         
@@ -40,7 +37,7 @@ class CamerasViewController: UIViewController {
     
     }
     
-    func fetchDataFromNetwork() {
+  private func fetchDataFromNetwork() {
           // Извлеките данные из сети и сохраните их в Realm
            let networkData: [Camera] = [
             Camera(id: 1, name: "Camera 1", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: "FIRST"),
@@ -51,6 +48,10 @@ class CamerasViewController: UIViewController {
 
            RealmManager.shared.saveDataToRealm(data: networkData)
        }
+    
+    private func handleMarkAsFavourite() {
+          print("Marked as favourite")
+      }
     
 }
 
@@ -77,10 +78,6 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 280
-    }
-    
-  private func handleMarkAsFavourite() {
-        print("Marked as favourite")
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
