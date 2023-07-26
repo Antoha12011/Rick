@@ -12,6 +12,7 @@ final class DoorsViewController: UIViewController {
     
     @IBOutlet weak var doorTableView: UITableView!
     
+    @IBOutlet weak var navBar: UINavigationBar!
     @IBAction func camBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "CamerasViewController")
@@ -20,7 +21,7 @@ final class DoorsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
+        navBar.shadowImage = UIImage()
     }
     
     private func handleMarkAsFavorite() {

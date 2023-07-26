@@ -14,6 +14,8 @@ final class CamerasViewController: UIViewController {
         
     @IBOutlet weak var camTableView: UITableView!
     
+    @IBOutlet weak var navBar: UINavigationBar!
+    
     @IBAction func doorBtn(_ sender: Any) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil);
         let vc = storyboard.instantiateViewController(withIdentifier: "DoorsViewController")
@@ -21,12 +23,13 @@ final class CamerasViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.hidesBackButton = true
 //        let realm = try! Realm()
 //        try! realm.write {
 //            realm.deleteAll()
 //        }
-        
+
+        navBar.shadowImage = UIImage()
+       
         let realm = try! Realm()
         cam = realm.objects(CamerasRealm.self)
         camTableView.reloadData()
