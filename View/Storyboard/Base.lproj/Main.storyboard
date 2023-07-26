@@ -149,7 +149,7 @@
         <!--Мой дом-->
         <scene sceneID="FGz-sG-IYe">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="1EK-GH-cLy" customClass="DoorsViewController" customModule="Rick" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DoorsViewController" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="1EK-GH-cLy" customClass="DoorsViewController" customModule="Rick" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Cjn-Kq-DFn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -323,9 +323,6 @@
                                     <fontDescription key="subtitleFontDescription" type="system" weight="light" pointSize="18"/>
                                     <color key="baseForegroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
-                                <connections>
-                                    <action selector="openDoorBtn:" destination="tF6-gV-4Y3" eventType="touchUpInside" id="5tO-5C-Gz8"/>
-                                </connections>
                             </button>
                             <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ybj-lW-tzx">
                                 <rect key="frame" x="0.0" y="821" width="414" height="75"/>
@@ -403,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kSJ-jB-oyq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1692.753623188406" y="-35.491071428571423"/>
+            <point key="canvasLocation" x="1623" y="-35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Iok-9F-exn">

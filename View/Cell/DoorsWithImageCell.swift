@@ -17,6 +17,11 @@ class DoorsWithImageCell: UITableViewCell {
         super.awakeFromNib()
         
     }
+    
+    override func prepareForReuse() {
+        visualImg.image = nil
+        visualImg.image = nil
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
