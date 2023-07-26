@@ -50,11 +50,6 @@ final class CamerasViewController: UIViewController {
 
            RealmManager.shared.saveDataToRealm(data: networkData)
        }
-    
-    private func handleMarkAsFavourite() {
-          print("Marked as favourite")
-      }
-    
 }
 
 extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
@@ -71,7 +66,6 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
         cell.configure(model: cam[indexPath.row])
-        
         return cell
         
     }
@@ -83,7 +77,9 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath)
             -> UISwipeActionsConfiguration? {
             let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-                self.handleMarkAsFavourite()
+                if let cell = tableView.cellForRow(at: indexPath) as? CamerasCell {
+                    cell.toggleImage()
+                }
                 completionHandler(true)
             }
             deleteAction.image = UIImage(named: "star")

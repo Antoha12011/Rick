@@ -24,10 +24,6 @@ final class DoorsViewController: UIViewController {
         navBar.shadowImage = UIImage()
     }
     
-    private func handleMarkAsFavorite() {
-        print("Marked as favourite")
-    }
-    
     private func handleMarkAsEdit() {
         print("Marked as edit")
     }
@@ -68,7 +64,6 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favoritAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
-            self.handleMarkAsFavorite()
             completionHandler(true)
         }
         favoritAction.image = UIImage(named: "star")

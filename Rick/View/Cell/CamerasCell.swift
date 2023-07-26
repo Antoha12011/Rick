@@ -15,10 +15,16 @@ final class CamerasCell: UITableViewCell {
     @IBOutlet weak var recLabel: UILabel!
     @IBOutlet weak var favoritStarImg: UIImageView!
     
+    var isImageHidden: Bool = false
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         camImage.clipsToBounds = true
-        
+    }
+    
+    func toggleImage() {
+        isImageHidden = !isImageHidden
+        favoritStarImg.isHidden = isImageHidden
     }
     
     func configure(model: CamerasRealm) {
