@@ -216,11 +216,27 @@
                                                         <constraint firstAttribute="height" constant="198" id="guJ-4S-RSu"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Домофон" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhv-vO-ctZ">
+                                                    <rect key="frame" x="20" y="216" width="84" height="23"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="19"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="В сети" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-4X-Afl">
+                                                    <rect key="frame" x="20" y="241" width="44" height="17"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" red="0.27361871780000002" green="0.27361871780000002" blue="0.27361871780000002" alpha="0.58176551870000004" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
+                                                <constraint firstItem="rhv-vO-ctZ" firstAttribute="top" secondItem="czM-ih-Fdm" secondAttribute="bottom" constant="18" id="2Jx-Ky-mSx"/>
+                                                <constraint firstItem="rhv-vO-ctZ" firstAttribute="leading" secondItem="QbZ-gN-Uwa" secondAttribute="leadingMargin" id="7W2-EI-GXx"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="l8H-0z-vrn" secondAttribute="bottom" id="8um-Ss-NCP"/>
                                                 <constraint firstItem="l8H-0z-vrn" firstAttribute="trailing" secondItem="QbZ-gN-Uwa" secondAttribute="trailingMargin" id="Muh-Fa-99o"/>
+                                                <constraint firstItem="a2b-4X-Afl" firstAttribute="leading" secondItem="QbZ-gN-Uwa" secondAttribute="leadingMargin" id="aLt-2g-cRP"/>
+                                                <constraint firstItem="a2b-4X-Afl" firstAttribute="top" secondItem="rhv-vO-ctZ" secondAttribute="bottom" constant="2" id="qZu-2A-L8u"/>
                                                 <constraint firstItem="czM-ih-Fdm" firstAttribute="leading" secondItem="QbZ-gN-Uwa" secondAttribute="leading" id="r3o-4V-hgC"/>
                                                 <constraint firstAttribute="trailing" secondItem="czM-ih-Fdm" secondAttribute="trailing" id="sBK-2a-raS"/>
                                                 <constraint firstItem="czM-ih-Fdm" firstAttribute="top" secondItem="QbZ-gN-Uwa" secondAttribute="top" id="uE2-iu-S12"/>
