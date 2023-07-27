@@ -17,7 +17,7 @@
 		12DEC8C12A6ECB7D003DE5EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12DEC8BF2A6ECB7D003DE5EF /* LaunchScreen.storyboard */; };
 		12DEC8CD2A6ECEB0003DE5EF /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12DEC8CC2A6ECEB0003DE5EF /* RealmSwift */; };
 		12DEC8CF2A6ED02F003DE5EF /* CameraDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8CE2A6ED02F003DE5EF /* CameraDataModel.swift */; };
-		12DEC8D52A6ED07F003DE5EF /* NetworkLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8D42A6ED07F003DE5EF /* NetworkLayer.swift */; };
+		12DEC8D52A6ED07F003DE5EF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8D42A6ED07F003DE5EF /* NetworkService.swift */; };
 		12DEC8DD2A6ED154003DE5EF /* CamerasCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8DC2A6ED154003DE5EF /* CamerasCell.swift */; };
 		12DEC8E12A6ED7B1003DE5EF /* RealmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8E02A6ED7B1003DE5EF /* RealmModel.swift */; };
 		12FC46792A702F47002FAE3A /* DoorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FC46782A702F47002FAE3A /* DoorsViewController.swift */; };
@@ -39,7 +39,7 @@
 		12DEC8C02A6ECB7D003DE5EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12DEC8C22A6ECB7D003DE5EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12DEC8CE2A6ED02F003DE5EF /* CameraDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDataModel.swift; sourceTree = "<group>"; };
-		12DEC8D42A6ED07F003DE5EF /* NetworkLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLayer.swift; sourceTree = "<group>"; };
+		12DEC8D42A6ED07F003DE5EF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		12DEC8DC2A6ED154003DE5EF /* CamerasCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CamerasCell.swift; sourceTree = "<group>"; };
 		12DEC8E02A6ED7B1003DE5EF /* RealmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmModel.swift; sourceTree = "<group>"; };
 		12FC46782A702F47002FAE3A /* DoorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +73,7 @@
 		122B81B32A6FFFF900B3C93C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				12DEC8D42A6ED07F003DE5EF /* NetworkLayer.swift */,
+				12DEC8D42A6ED07F003DE5EF /* NetworkService.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				12FE44002A6F4450001EDB94 /* DetailDomofonViewController.swift in Sources */,
 				12DEC8DD2A6ED154003DE5EF /* CamerasCell.swift in Sources */,
 				123296552A6FEA63004CEFF4 /* RealmManager.swift in Sources */,
-				12DEC8D52A6ED07F003DE5EF /* NetworkLayer.swift in Sources */,
+				12DEC8D52A6ED07F003DE5EF /* NetworkService.swift in Sources */,
 				12FC467B2A702F63002FAE3A /* DoorsCell.swift in Sources */,
 				12DEC8B92A6ECB7C003DE5EF /* CamerasViewController.swift in Sources */,
 				12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */,

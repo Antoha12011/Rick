@@ -14,8 +14,6 @@ final class RealmManager {
     
     static let shared = RealmManager()
     
-    init() {}
-    
     // MARK: - Public Methods
     
     func saveDataToRealm(data: [Camera]) {

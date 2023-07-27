@@ -12,8 +12,9 @@ final class CamerasViewController: UIViewController {
     
     // MARK: - Private Properties
     
-    private var cam: Results<CamerasRealm>!
-    let realmManager = RealmManager()
+    private var realmData: Results<CamerasRealm>!
+    private var networkData = [Camera]()
+    private var isInternetAviable = true
     
     // MARK: - Outlets
     
@@ -25,10 +26,11 @@ final class CamerasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.shadowImage = UIImage()
-        realmManager.fetchDataFromNetwork()
+        NetworkService.shared.getCameras()
+        RealmManager.shared.fetchDataFromNetwork()
 
         let realm = try! Realm()
-        cam = realm.objects(CamerasRealm.self)
+        realmData = realm.objects(CamerasRealm.self)
         camTableView.reloadData()
     }
     
@@ -45,16 +47,24 @@ final class CamerasViewController: UIViewController {
 
 extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cam.count
+        if isInternetAviable == true {
+            return realmData.count
+        } else {
+            return networkData.count
+        }
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell", for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
+        if isInternetAviable == true {
+            cell.configureFromRealm(realmData[indexPath.row])
+        } else {
+            cell.configureFromNet(networkData[indexPath.row])
+        }
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
-        cell.configure(model: cam[indexPath.row])
+        
         return cell
     }
     
@@ -63,15 +73,15 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let deleteAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+        let favoritAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
             if let cell = tableView.cellForRow(at: indexPath) as? CamerasCell {
                 cell.toggleImage()
             }
             completionHandler(true)
         }
-        deleteAction.image = UIImage(named: "star")
-        deleteAction.backgroundColor = .white
-        let configuration = UISwipeActionsConfiguration(actions: [deleteAction])
+        favoritAction.image = UIImage(named: "star")
+        favoritAction.backgroundColor = .white
+        let configuration = UISwipeActionsConfiguration(actions: [favoritAction])
         return configuration
     }
 }

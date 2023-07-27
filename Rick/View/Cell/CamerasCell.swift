@@ -53,9 +53,15 @@ final class CamerasCell: UITableViewCell {
         favoritStarImg.isHidden = isImageHidden
     }
     
-    func configure(model: CamerasRealm) {
+    func configureFromRealm(_ model: CamerasRealm) {
         camLabel.text = model.name
         guard let url = URL(string: model.snapshot ?? "") else { return }
+        camImage.kf.setImage(with: url, placeholder: nil)
+    }
+    
+    func configureFromNet(_ model: Camera) {
+        camLabel.text = model.name
+        guard let url = URL(string: model.snapshot) else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
     }
 }
