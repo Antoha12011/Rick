@@ -187,7 +187,6 @@
                                                     <rect key="frame" x="324" y="31" width="30" height="58"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="SNO-42-eHw"/>
-                                                        <constraint firstAttribute="height" constant="58" id="dJ0-PR-D53"/>
                                                     </constraints>
                                                 </imageView>
                                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Подъезд 1" textAlignment="natural" minimumFontSize="19" translatesAutoresizingMaskIntoConstraints="NO" id="mkN-Ip-rie">
