@@ -29,7 +29,6 @@ final class DefaultAPIClient: APIClient {
     // MARK: - Private Properties
     
     private let api: API
-    private let encoder = JSONParameterEncoder()
     private let timeOutModifier: Session.RequestModifier = { $0.timeoutInterval = 120 }
     
     init(api: API) {
