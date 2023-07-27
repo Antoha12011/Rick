@@ -38,6 +38,24 @@ final class CamerasViewController: UIViewController {
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        camTableView.reloadData()
+        camTableView.refreshControl = UIRefreshControl()
+        camTableView.refreshControl?.addTarget(self,
+                                               action: #selector(pulldown), for: .valueChanged)
+        camTableView.refreshControl?.tintColor = .black
+    }
+    
+    // MARK: - Public Methods
+    
+    @objc func pulldown() {
+        camTableView.reloadData()
+        DispatchQueue.main.async {
+            self.camTableView.refreshControl?.endRefreshing()
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func doorBtn(_ sender: Any) {
