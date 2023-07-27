@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		123296552A6FEA63004CEFF4 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 123296542A6FEA63004CEFF4 /* RealmManager.swift */; };
+		125D72FE2A730A3C00E63F74 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D72FD2A730A3C00E63F74 /* APIClient.swift */; };
+		125D73012A730A5D00E63F74 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 125D73002A730A5D00E63F74 /* Alamofire */; };
+		125D73032A730ACD00E63F74 /* ModelAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125D73022A730ACD00E63F74 /* ModelAPI.swift */; };
 		12B3AA2C2A7096A300E3C0A4 /* DoorsWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12B3AA2B2A7096A300E3C0A4 /* DoorsWithImageCell.swift */; };
 		12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */; };
 		12DEC8B72A6ECB7C003DE5EF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DEC8B62A6ECB7C003DE5EF /* SceneDelegate.swift */; };
@@ -29,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		123296542A6FEA63004CEFF4 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		125D72FD2A730A3C00E63F74 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		125D73022A730ACD00E63F74 /* ModelAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelAPI.swift; sourceTree = "<group>"; };
 		12B3AA2B2A7096A300E3C0A4 /* DoorsWithImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsWithImageCell.swift; sourceTree = "<group>"; };
 		12DEC8B12A6ECB7C003DE5EF /* Rick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rick.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12DEC8B42A6ECB7C003DE5EF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				125D73012A730A5D00E63F74 /* Alamofire in Frameworks */,
 				12FE43FB2A6F31E9001EDB94 /* Kingfisher in Frameworks */,
 				12DEC8CD2A6ECEB0003DE5EF /* RealmSwift in Frameworks */,
 			);
@@ -74,6 +80,9 @@
 			isa = PBXGroup;
 			children = (
 				12DEC8D42A6ED07F003DE5EF /* NetworkService.swift */,
+				125D72FD2A730A3C00E63F74 /* APIClient.swift */,
+				125D73022A730ACD00E63F74 /* ModelAPI.swift */,
+				12DEC8D22A6ED04C003DE5EF /* Models */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -100,7 +109,6 @@
 			children = (
 				12DEC8D32A6ED05D003DE5EF /* SupportingFiles */,
 				12DEC8D92A6ED0D5003DE5EF /* View */,
-				12DEC8D22A6ED04C003DE5EF /* Models */,
 				12DEC8D62A6ED083003DE5EF /* Services */,
 			);
 			path = Rick;
@@ -192,6 +200,7 @@
 			packageProductDependencies = (
 				12DEC8CC2A6ECEB0003DE5EF /* RealmSwift */,
 				12FE43FA2A6F31E9001EDB94 /* Kingfisher */,
+				125D73002A730A5D00E63F74 /* Alamofire */,
 			);
 			productName = Rick;
 			productReference = 12DEC8B12A6ECB7C003DE5EF /* Rick.app */;
@@ -224,6 +233,7 @@
 			packageReferences = (
 				12DEC8CB2A6ECEB0003DE5EF /* XCRemoteSwiftPackageReference "realm-swift" */,
 				12FE43F92A6F31E8001EDB94 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				125D72FF2A730A5D00E63F74 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 12DEC8B22A6ECB7C003DE5EF /* Products */;
 			projectDirPath = "";
@@ -253,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12FE44002A6F4450001EDB94 /* DetailDomofonViewController.swift in Sources */,
+				125D72FE2A730A3C00E63F74 /* APIClient.swift in Sources */,
 				12DEC8DD2A6ED154003DE5EF /* CamerasCell.swift in Sources */,
 				123296552A6FEA63004CEFF4 /* RealmManager.swift in Sources */,
 				12DEC8D52A6ED07F003DE5EF /* NetworkService.swift in Sources */,
@@ -260,6 +271,7 @@
 				12DEC8B92A6ECB7C003DE5EF /* CamerasViewController.swift in Sources */,
 				12DEC8B52A6ECB7C003DE5EF /* AppDelegate.swift in Sources */,
 				12FC46792A702F47002FAE3A /* DoorsViewController.swift in Sources */,
+				125D73032A730ACD00E63F74 /* ModelAPI.swift in Sources */,
 				12FE43FD2A6F3AD8001EDB94 /* DoorDataModel.swift in Sources */,
 				12DEC8E12A6ED7B1003DE5EF /* RealmModel.swift in Sources */,
 				12DEC8CF2A6ED02F003DE5EF /* CameraDataModel.swift in Sources */,
@@ -492,6 +504,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		125D72FF2A730A5D00E63F74 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		12DEC8CB2A6ECEB0003DE5EF /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
@@ -511,6 +531,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		125D73002A730A5D00E63F74 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 125D72FF2A730A5D00E63F74 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		12DEC8CC2A6ECEB0003DE5EF /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 12DEC8CB2A6ECEB0003DE5EF /* XCRemoteSwiftPackageReference "realm-swift" */;

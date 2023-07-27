@@ -12,9 +12,11 @@ final class CamerasViewController: UIViewController {
     
     // MARK: - Private Properties
     
+    let networkService = NetworkService()
+    
     private var realmData: Results<CamerasRealm>!
-    private var networkData = [Camera]()
-    private var isInternetAviable = true
+    private var networkData: [Camera] = []
+    private var isInternetAviable = false
     
     // MARK: - Outlets
     
@@ -26,14 +28,22 @@ final class CamerasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.shadowImage = UIImage()
-        NetworkService.shared.getCameras()
-        RealmManager.shared.fetchDataFromNetwork()
+        
+        networkService.getData { [weak self] values in
+            DispatchQueue.main.async {
+                guard let self else { return }
+                self.networkData = values
+                self.camTableView.reloadData()
+            }
+        }
+        
+//        RealmManager.shared.fetchDataFromNetwork()
 
-        let realm = try! Realm()
-        realmData = realm.objects(CamerasRealm.self)
-        camTableView.reloadData()
+//        let realm = try! Realm()
+//        realmData = realm.objects(CamerasRealm.self)
+//        camTableView.reloadData()
     }
-    
+
     // MARK: - Actions
     
     @IBAction func doorBtn(_ sender: Any) {

@@ -9,23 +9,24 @@ import Foundation
 
 final class NetworkService {
     
-    static let shared = NetworkService()
+    private let apiClient: APIClient = DefaultAPIClient(api: ModelAPI())
+    private let modelApi = ModelAPI()
     
-    let urlString = "http://cars.cprogroup.ru/api/rubetek/cameras/"
-    
-    func getCameras() {
-        let url = URL(string: urlString)!
-        let request = URLRequest(url: url)
-        
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data else { return }
-            
-            if (try? JSONDecoder().decode(Camera.self, from: data)) != nil {
-                print("Success")
-            } else {
-                print("Error")
+    func getData(completion: @escaping ([Camera]) -> Void) {
+        guard let url = modelApi.url(for: .getCameras) else { return }
+        apiClient.get(String(), url: url) { result in
+            switch result {
+            case .failure(let error):
+                print(error)
+            case .success(let data):
+                guard let data = data else { return }
+                do {
+                    let model = try JSONDecoder().decode([Camera].self, from: data)
+                    completion(model)
+                } catch {
+                    debugPrint("FAIL")
+                }
             }
         }
-        task.resume()
     }
 }
