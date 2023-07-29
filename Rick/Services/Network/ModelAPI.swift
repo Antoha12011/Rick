@@ -22,7 +22,7 @@ struct ModelAPI: API {
     // MARK: - Constants
     
     private enum Constant {
-        static let baseURL = "http://cars.cprogroup.ru/api/rubetek"
+        static let baseURL = "http://cars.cprogroup.ru/api/rubetek/"
     }
     
     // MARK: - Public Methods
@@ -36,9 +36,9 @@ struct ModelAPI: API {
     private func slug(for endpoint: APIEndpoint) -> String {
         switch endpoint {
         case .getCameras:
-            return "/cameras"
+            return "cameras"
         case .getRooms:
-            return "/doors"
+            return "doors"
         }
     }
 }

@@ -12,7 +12,7 @@ final class NetworkService {
     private let apiClient: APIClient = DefaultAPIClient(api: ModelAPI())
     private let modelApi = ModelAPI()
     
-    func getData(completion: @escaping ([Camera]) -> Void) {
+    func getData(completion: @escaping (DataModel) -> Void) {
         guard let url = modelApi.url(for: .getCameras) else { return }
         apiClient.get(String(), url: url) { result in
             switch result {
@@ -21,12 +21,13 @@ final class NetworkService {
             case .success(let data):
                 guard let data = data else { return }
                 do {
-                    let model = try JSONDecoder().decode([Camera].self, from: data)
-                    completion(model)
+                    let model = try JSONDecoder().decode(CameraDataModel.self, from: data)
+                    completion(model.data)
                 } catch {
-                    debugPrint("FAIL")
+                    debugPrint("Ошибка декодирования: \(error)")
                 }
             }
         }
     }
+
 }

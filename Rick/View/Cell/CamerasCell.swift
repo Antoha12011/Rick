@@ -59,9 +59,10 @@ final class CamerasCell: UITableViewCell {
         camImage.kf.setImage(with: url, placeholder: nil)
     }
     
-    func configureFromNet(_ model: Camera) {
-        camLabel.text = model.name
-        guard let url = URL(string: model.snapshot) else { return }
+    func configureFromNet(_ cameraData: DataModel, at indexPath: IndexPath) {
+        let camera = cameraData.cameras[indexPath.row]
+        camLabel.text = camera.name
+        guard let url = URL(string: camera.snapshot) else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
     }
 }

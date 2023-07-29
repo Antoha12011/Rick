@@ -9,11 +9,11 @@ import Foundation
 
 struct CameraDataModel: Codable {
     let success: Bool
-    let data: CameraData
+    let data: DataModel
 }
 
-struct CameraData: Codable {
-    let room: [String]?
+struct DataModel: Codable {
+    let room: [String]
     let cameras: [Camera]
 }
 
@@ -21,6 +21,8 @@ struct Camera: Codable {
     let id: Int
     let name: String
     let snapshot: String
-    let favorites, rec: Bool
+    let favorites: Bool
+    let rec: Bool
     let room: String?
 }
+

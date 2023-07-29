@@ -14,8 +14,8 @@ final class CamerasViewController: UIViewController {
     
     private let networkService = NetworkService()
     private var realmData: Results<CamerasRealm>!
-    private var networkData: [Camera] = []
-    private var isInternetAviable = true
+    private var networkData: DataModel?
+    private var isInternetAviable = false
     
     // MARK: - Outlets
     
@@ -28,12 +28,11 @@ final class CamerasViewController: UIViewController {
         super.viewDidLoad()
         getDataFromDB()
         navBar.shadowImage = UIImage()
-        
+   
         networkService.getData { [weak self] values in
             DispatchQueue.main.async {
-                guard let self else { return }
-                self.networkData = values
-                self.camTableView.reloadData()
+                self?.networkData = values
+                self?.camTableView.reloadData()
             }
         }
     }
@@ -42,8 +41,7 @@ final class CamerasViewController: UIViewController {
         super.viewDidAppear(animated)
         camTableView.reloadData()
         camTableView.refreshControl = UIRefreshControl()
-        camTableView.refreshControl?.addTarget(self,
-                                               action: #selector(pulldown), for: .valueChanged)
+        camTableView.refreshControl?.addTarget(self, action: #selector(pulldown), for: .valueChanged)
         camTableView.refreshControl?.tintColor = .black
     }
     
@@ -81,7 +79,7 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         if isInternetAviable == true {
             return realmData.count
         } else {
-            return networkData.count
+            return networkData?.cameras.count ?? 0
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -89,10 +87,11 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         if isInternetAviable == true {
-            cell.configureFromRealm(realmData[indexPath.row])
+            cell.configureFromNet(networkData!, at: indexPath)
         } else {
-            cell.configureFromNet(networkData[indexPath.row])
+            cell.configureFromRealm(realmData[indexPath.row])
         }
+        
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
         
