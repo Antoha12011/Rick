@@ -77,9 +77,9 @@ final class CamerasViewController: UIViewController {
 extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isInternetAviable == true {
-            return realmData.count
-        } else {
             return networkData?.cameras.count ?? 0
+        } else {
+            return realmData.count
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
