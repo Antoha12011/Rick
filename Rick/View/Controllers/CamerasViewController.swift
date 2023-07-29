@@ -16,6 +16,7 @@ final class CamerasViewController: UIViewController {
     private var realmData: Results<CamerasRealm>!
     private var networkData: DataModel?
     private var isInternetAviable = true
+    private let realm = try! Realm()
     
     // MARK: - Outlets
     
@@ -66,7 +67,6 @@ final class CamerasViewController: UIViewController {
     
     private func getDataFromDB() {
         RealmManager.shared.fetchDataFromNetwork()
-        let realm = try! Realm()
         realmData = realm.objects(CamerasRealm.self)
         camTableView.reloadData()
     }
