@@ -15,7 +15,7 @@ final class CamerasViewController: UIViewController {
     private let networkService = NetworkService()
     private var realmData: Results<CamerasRealm>!
     private var networkData: DataModel?
-    private var isInternetAviable = false
+    private var isInternetAviable = true
     
     // MARK: - Outlets
     
@@ -86,8 +86,8 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell", for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
-        if isInternetAviable == true {
-            cell.configureFromNet(networkData!, at: indexPath)
+        if isInternetAviable, let networkData = networkData {
+            cell.configureFromNet(networkData, at: indexPath)
         } else {
             cell.configureFromRealm(realmData[indexPath.row])
         }
