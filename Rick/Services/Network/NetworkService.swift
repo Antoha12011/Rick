@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 final class NetworkService {
     
@@ -22,6 +23,7 @@ final class NetworkService {
                 guard let data = data else { return }
                 do {
                     let model = try JSONDecoder().decode(CameraDataModel.self, from: data)
+                    RealmManager.shared.saveDataToRealm(data: model.data.cameras)
                     completion(model.data)
                 } catch {
                     debugPrint("Ошибка декодирования: \(error)")
@@ -29,5 +31,4 @@ final class NetworkService {
             }
         }
     }
-
 }

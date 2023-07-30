@@ -1,4 +1,4 @@
-//
+//  print(Realm.Configuration.defaultConfiguration.fileURL!)
 //  CamerasViewController.swift
 //  Rick
 //
@@ -15,8 +15,9 @@ final class CamerasViewController: UIViewController {
     private let networkService = NetworkService()
     private var realmData: Results<CamerasRealm>!
     private var networkData: DataModel?
-    private var isInternetAviable = true
+    private var isInternetAviable: Bool?
     private let realm = try! Realm()
+    private let realmManager = RealmManager()
     
     // MARK: - Outlets
     
@@ -27,14 +28,13 @@ final class CamerasViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getDataFromDB()
         navBar.shadowImage = UIImage()
-   
-        networkService.getData { [weak self] values in
-            DispatchQueue.main.async {
-                self?.networkData = values
-                self?.camTableView.reloadData()
-            }
+        
+        realmData = realmManager.fetchCameras()
+        if realmData?.isEmpty ?? true {
+            fetchDataFromNetwork()
+        } else {
+            camTableView.reloadData()
         }
     }
     
@@ -65,10 +65,14 @@ final class CamerasViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    private func getDataFromDB() {
-        RealmManager.shared.fetchDataFromNetwork()
-        realmData = realm.objects(CamerasRealm.self)
-        camTableView.reloadData()
+    private func fetchDataFromNetwork() {
+        networkService.getData { [weak self] values in
+            self?.networkData = values
+            self?.realmManager.saveDataToRealm(data: values.cameras)
+            DispatchQueue.main.async {
+                self?.camTableView.reloadData()
+            }
+        }
     }
 }
 
@@ -86,7 +90,7 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell", for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
-        if isInternetAviable, let networkData = networkData {
+        if isInternetAviable ?? true, let networkData = networkData {
             cell.configureFromNet(networkData, at: indexPath)
         } else {
             cell.configureFromRealm(realmData[indexPath.row])

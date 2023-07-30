@@ -1,20 +1,9 @@
-//
-//  RealmManager.swift
-//  Rick
-//
-//  Created by Антон Павлов on 25.07.2023.
-//
-
 import Foundation
 import RealmSwift
 
 final class RealmManager {
     
-    // MARK: - Properties
-    
     static let shared = RealmManager()
-    
-    // MARK: - Public Methods
     
     func saveDataToRealm(data: [Camera]) {
         do {
@@ -36,14 +25,10 @@ final class RealmManager {
         }
     }
     
-    func fetchDataFromNetwork() {
-        let networkData: [Camera] = [
-            Camera(id: 1, name: "Camera 1", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: "FIRST"),
-            Camera(id: 3, name: "Camera 2", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: ""),
-            Camera(id: 2, name: "Camera 45", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: false, rec: true, room: "FIRST"),
-            Camera(id: 6, name: "Camera 89", snapshot: "https://serverspace.ru/wp-content/uploads/2019/06/backup-i-snapshot.png", favorites: true, rec: false, room: "FIRST")
-        ]
-        
-        RealmManager.shared.saveDataToRealm(data: networkData)
+    func fetchCameras() -> Results<CamerasRealm>? {
+        let realm = try! Realm()
+        let cameras = realm.objects(CamerasRealm.self)
+        return cameras
     }
 }
+
