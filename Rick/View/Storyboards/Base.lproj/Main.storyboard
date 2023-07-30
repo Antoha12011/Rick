@@ -48,6 +48,13 @@
                                                         <constraint firstAttribute="height" constant="35" id="mMw-wp-TaS"/>
                                                     </constraints>
                                                 </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mini-logo" translatesAutoresizingMaskIntoConstraints="NO" id="HfX-C7-eU3">
+                                                    <rect key="frame" x="20" y="11" width="50" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="3pQ-If-6PT"/>
+                                                        <constraint firstAttribute="width" constant="50" id="khK-k8-dwn"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
@@ -55,7 +62,9 @@
                                                 <constraint firstItem="y5n-C1-m36" firstAttribute="leading" secondItem="g0j-sz-p6J" secondAttribute="leadingMargin" id="9be-AB-gFF"/>
                                                 <constraint firstItem="T2f-H5-O8Z" firstAttribute="leading" secondItem="g0j-sz-p6J" secondAttribute="leading" id="HJd-75-qOQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="T2f-H5-O8Z" secondAttribute="trailing" id="Ks9-WC-DRY"/>
+                                                <constraint firstItem="HfX-C7-eU3" firstAttribute="top" secondItem="g0j-sz-p6J" secondAttribute="topMargin" id="P7t-xB-YUf"/>
                                                 <constraint firstItem="y5n-C1-m36" firstAttribute="top" secondItem="T2f-H5-O8Z" secondAttribute="bottom" constant="20" id="PKj-D5-UGU"/>
+                                                <constraint firstItem="HfX-C7-eU3" firstAttribute="leading" secondItem="g0j-sz-p6J" secondAttribute="leadingMargin" id="S37-Tw-XeI"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="y5n-C1-m36" secondAttribute="trailing" constant="100" id="Zhz-tv-3XH"/>
                                                 <constraint firstItem="TEg-wl-bCs" firstAttribute="trailing" secondItem="g0j-sz-p6J" secondAttribute="trailingMargin" constant="10" id="fUH-np-ore"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="y5n-C1-m36" secondAttribute="bottom" constant="20" id="m82-FI-wFt"/>
@@ -66,6 +75,7 @@
                                             <outlet property="camImage" destination="T2f-H5-O8Z" id="Bwb-UL-QlC"/>
                                             <outlet property="camLabel" destination="y5n-C1-m36" id="if6-ap-DJd"/>
                                             <outlet property="favoritStarImg" destination="TEg-wl-bCs" id="pV7-Sm-Vyo"/>
+                                            <outlet property="recImage" destination="HfX-C7-eU3" id="M3V-g1-vsC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -449,6 +459,7 @@
         <image name="blackscreen" width="32" height="32"/>
         <image name="keyDoor" width="40" height="40"/>
         <image name="lockon" width="26" height="24"/>
+        <image name="mini-logo" width="505" height="209"/>
         <image name="starFavorit" width="24" height="24"/>
         <image name="visual" width="343" height="207"/>
         <image name="Домофон" width="375" height="216"/>

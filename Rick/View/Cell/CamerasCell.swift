@@ -19,6 +19,7 @@ final class CamerasCell: UITableViewCell {
     @IBOutlet weak var camImage: UIImageView!
     @IBOutlet weak var camLabel: UILabel!
     @IBOutlet weak var favoritStarImg: UIImageView!
+    @IBOutlet weak var recImage: UIImageView!
     
     // MARK: - Override
     
@@ -52,6 +53,8 @@ final class CamerasCell: UITableViewCell {
     
     func configureFromRealm(_ model: CamerasRealm) {
         camLabel.text = model.name
+        favoritStarImg.isHidden = !model.favorites
+        recImage.isHidden = !model.rec
         guard let url = URL(string: model.snapshot) else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
     }
@@ -59,6 +62,8 @@ final class CamerasCell: UITableViewCell {
     func configureFromNet(_ cameraData: DataModel, at indexPath: IndexPath) {
         let camera = cameraData.cameras[indexPath.row]
         camLabel.text = camera.name
+        favoritStarImg.isHidden = !camera.favorites
+        recImage.isHidden = !camera.rec
         guard let url = URL(string: camera.snapshot) else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
     }

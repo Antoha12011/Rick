@@ -101,20 +101,23 @@ final class CamerasViewController: UIViewController {
 extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isInternetAviable == true {
-                return networkData?.cameras.count ?? 0
-            } else {
-                return realmData?.count ?? 0
-            }
+            return networkData?.cameras.count ?? 0
+        } else {
+            return realmData?.count ?? 0
+        }
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
+        
         if isInternetAviable ?? true, let networkData = networkData {
-               cell.configureFromNet(networkData, at: indexPath)
-           } else {
-               cell.configureFromRealm(realmData[indexPath.row])
-           }
+            cell.configureFromNet(networkData, at: indexPath)
+        } else {
+            let camera = realmData[indexPath.row]
+            cell.configureFromRealm(camera)
+        }
         
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
