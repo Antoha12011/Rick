@@ -9,6 +9,11 @@ import UIKit
 
 final class DoorsViewController: UIViewController {
     
+    // MARK: Private Properties
+    
+    private let sectionOneIdentifier = "DoorsCell"
+    private let sectionTwoIdentifier = "DoorsCellWithImage"
+    
     // MARK: - Outlets
     
     @IBOutlet weak var doorTableView: UITableView!
@@ -45,13 +50,13 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "DoorsCell", for: indexPath) as! DoorsCell
+            let cell = tableView.dequeueReusableCell(withIdentifier: sectionOneIdentifier, for: indexPath) as! DoorsCell
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
             return cell
             
         } else if indexPath.section == 1 {
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: "DoorsCellWithImage", for: indexPath) as! DoorsWithImageCell
+            let cell2 = tableView.dequeueReusableCell(withIdentifier: sectionTwoIdentifier, for: indexPath) as! DoorsWithImageCell
             cell2.contentView.layer.cornerRadius = 10
             cell2.contentView.layer.masksToBounds = true
             return cell2
