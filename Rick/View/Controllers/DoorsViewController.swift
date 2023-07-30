@@ -13,6 +13,10 @@ final class DoorsViewController: UIViewController {
     
     private let sectionOneIdentifier = "DoorsCell"
     private let sectionTwoIdentifier = "DoorsCellWithImage"
+    private var networkData: DoorData?
+    private let networkService = NetworkService()
+    private var section0Data: [Door]?
+    private var section1Data: [Door]?
     
     // MARK: - Outlets
     
@@ -24,8 +28,17 @@ final class DoorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.shadowImage = UIImage()
+        
+        networkService.getDoors { values in
+            self.networkData = values
+            self.section0Data = values?.data
+            self.section1Data = values?.data
+            
+            DispatchQueue.main.async {
+                self.doorTableView.reloadData()
+            }
+        }
     }
-    
     // MARK: - Actions
     
     @IBAction func camBtn(_ sender: Any) {
@@ -38,28 +51,37 @@ final class DoorsViewController: UIViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 { return 3 }
-        else if section == 1 { return 1 }
-        else { return 1 }
-    }
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section == 0 {
+            return 3
+        } else if section == 1 {
+            return 1
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: sectionOneIdentifier, for: indexPath) as! DoorsCell
+            let door = section0Data?[indexPath.row]
+            cell.doorTextField.text = door?.name
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
             return cell
-            
         } else if indexPath.section == 1 {
-            let cell2 = tableView.dequeueReusableCell(withIdentifier: sectionTwoIdentifier, for: indexPath) as! DoorsWithImageCell
-            cell2.contentView.layer.cornerRadius = 10
-            cell2.contentView.layer.masksToBounds = true
-            return cell2
+            let cell = tableView.dequeueReusableCell(withIdentifier: sectionTwoIdentifier, for: indexPath) as! DoorsWithImageCell
+            if let cameraData = section1Data?[indexPath.row] as? Door {
+                cell.configureFromNetwork(cameraData)
+            }
+          
+            cell.contentView.layer.cornerRadius = 10
+            cell.contentView.layer.masksToBounds = true
+            return cell
         }
         return UITableViewCell()
     }
@@ -81,6 +103,9 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
             if let cell = tableView.cellForRow(at: indexPath) as? DoorsCell {
                 cell.doorTextField.isEnabled = true
                 cell.doorTextField.becomeFirstResponder()
+                if let cell = tableView.cellForRow(at: indexPath) as? DoorsCell {
+                    cell.toggleImage()
+                }
             }
             completionHandler(true)
         }

@@ -9,16 +9,23 @@ import UIKit
 
 final class DoorsCell: UITableViewCell {
     
+    private var isImageHidden: Bool = false
+    
     // MARK: - Outlets
     
     @IBOutlet weak var lockImageView: UIImageView!
     @IBOutlet weak var doorTextField: UITextField!
+    @IBOutlet weak var favoritImageDoors: UIImageView!
     
     // MARK: - Override
     
     override func prepareForReuse() {
         doorTextField.text = nil
-        lockImageView.image = nil
+    }
+    
+    func toggleImage() {
+        isImageHidden = !isImageHidden
+        favoritImageDoors.isHidden = isImageHidden
     }
     
     override public var frame: CGRect {

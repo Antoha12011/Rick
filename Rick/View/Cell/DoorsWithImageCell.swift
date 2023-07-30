@@ -6,13 +6,18 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class DoorsWithImageCell: UITableViewCell {
 
+    private var isImageHidden: Bool = false
+    
     // MARK: - Outlets
     
     @IBOutlet weak var visualImg: UIImageView!
     @IBOutlet weak var lockImg: UIImageView!
+    @IBOutlet weak var domofonLabel: UILabel!
+    @IBOutlet weak var favBat: UIImageView!
     
     // MARK: - Override
     
@@ -21,8 +26,19 @@ final class DoorsWithImageCell: UITableViewCell {
         visualImg.clipsToBounds = true
     }
     
+    func toggleImage() {
+        isImageHidden = !isImageHidden
+        favBat.isHidden = isImageHidden
+    }
+    
     override func prepareForReuse() {
         visualImg.image = nil
-        visualImg.image = nil
+    }
+    
+    func configureFromNetwork(_ cameraData: Door) {
+        domofonLabel.text = cameraData.name
+        favBat.isHidden = !cameraData.favorites
+        guard let url = URL(string: cameraData.snapshot ?? "") else { return }
+        visualImg.kf.setImage(with: url, placeholder: nil)
     }
 }

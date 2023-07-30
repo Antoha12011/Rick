@@ -63,7 +63,7 @@ final class CamerasViewController: UIViewController {
             camTableView.refreshControl?.endRefreshing()
             return
         }
-        networkService.getData { [weak self] values in
+        networkService.getCameras { [weak self] values in
             self?.networkData = values
             self?.realmManager.saveDataToRealm(data: values.cameras)
             DispatchQueue.main.async {
