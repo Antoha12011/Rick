@@ -18,7 +18,6 @@ final class CamerasViewController: UIViewController {
     private var realmData: Results<CamerasRealm>!
     private var networkData: DataModel?
     private var isInternetAviable: Bool?
-   
     
     // MARK: - Outlets
     
@@ -30,30 +29,21 @@ final class CamerasViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.shadowImage = UIImage()
-        
-        realmData = realmManager.fetchCameras()
-        if realmData?.isEmpty ?? true {
-            fetchDataFromNetwork()
-        } else {
-            camTableView.reloadData()
-        }
+        fetchData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         camTableView.reloadData()
         camTableView.refreshControl = UIRefreshControl()
-        camTableView.refreshControl?.addTarget(self, action: #selector(pulldown), for: .valueChanged)
+        camTableView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
         camTableView.refreshControl?.tintColor = .black
     }
     
     // MARK: - Public Methods
     
-    @objc func pulldown() {
-        camTableView.reloadData()
-        DispatchQueue.main.async {
-            self.camTableView.refreshControl?.endRefreshing()
-        }
+    @objc func refreshData() {
+        fetchDataFromNetwork()
     }
     
     // MARK: - Actions
@@ -72,6 +62,18 @@ final class CamerasViewController: UIViewController {
             self?.realmManager.saveDataToRealm(data: values.cameras)
             DispatchQueue.main.async {
                 self?.camTableView.reloadData()
+                self?.camTableView.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
+    private func fetchData() {
+        realmData = realmManager.fetchCameras()
+        if realmData.isEmpty {
+            fetchDataFromNetwork()
+        } else {
+            DispatchQueue.main.async {
+                self.camTableView.reloadData()
             }
         }
     }
