@@ -55,7 +55,7 @@ final class CamerasCell: UITableViewCell {
     
     func configureFromRealm(_ model: CamerasRealm) {
         camLabel.text = model.name
-        guard let url = URL(string: model.snapshot ?? "") else { return }
+        guard let url = URL(string: model.snapshot) else { return }
         camImage.kf.setImage(with: url, placeholder: nil)
     }
     
