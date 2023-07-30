@@ -12,12 +12,13 @@ final class CamerasViewController: UIViewController {
     
     // MARK: - Private Properties
     
+    private let realm = try! Realm()
     private let networkService = NetworkService()
+    private let realmManager = RealmManager()
     private var realmData: Results<CamerasRealm>!
     private var networkData: DataModel?
     private var isInternetAviable: Bool?
-    private let realm = try! Realm()
-    private let realmManager = RealmManager()
+   
     
     // MARK: - Outlets
     
