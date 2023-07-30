@@ -11,7 +11,7 @@ import Alamofire
 
 final class DoorsViewController: UIViewController {
     
-    // MARK: Private Properties
+    // MARK: - Private Properties
     
     private let realm = try! Realm()
     private let sectionOneIdentifier = "DoorsCell"
@@ -23,7 +23,7 @@ final class DoorsViewController: UIViewController {
     private var section0Data: [Door]?
     private var section1Data: [Door]?
     private var isInternetAviable: Bool?
-   
+    
     
     // MARK: - Outlets
     
@@ -36,7 +36,7 @@ final class DoorsViewController: UIViewController {
         super.viewDidLoad()
         navBar.shadowImage = UIImage()
         fetchData()
-   
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -92,7 +92,6 @@ final class DoorsViewController: UIViewController {
             }
         }
     }
-    
     
     // MARK: - Actions
     
