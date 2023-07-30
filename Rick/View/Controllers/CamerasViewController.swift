@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Alamofire
 
 final class CamerasViewController: UIViewController {
     
@@ -58,6 +59,10 @@ final class CamerasViewController: UIViewController {
     // MARK: - Private Methods
     
     private func fetchDataFromNetwork() {
+        guard isInternetAvailable() else {
+            camTableView.refreshControl?.endRefreshing()
+            return
+        }
         networkService.getData { [weak self] values in
             self?.networkData = values
             self?.realmManager.saveDataToRealm(data: values.cameras)
@@ -68,10 +73,21 @@ final class CamerasViewController: UIViewController {
         }
     }
     
+    private func isInternetAvailable() -> Bool {
+        let networkManager = NetworkReachabilityManager()
+        return networkManager?.isReachable ?? false
+    }
+    
     private func fetchData() {
+        isInternetAviable = isInternetAvailable()
         realmData = realmManager.fetchCameras()
-        if realmData.isEmpty {
+        if isInternetAviable == true {
             fetchDataFromNetwork()
+        } else if realmData.isEmpty {
+            let alert = UIAlertController(title: "Проблемы с интернетом!", message: "К сожалению, загруженных данных на вашем телефоне нет, подключитесь к интернету", preferredStyle: .actionSheet)
+            let okBtn = UIAlertAction(title: "Хорошо", style: .cancel, handler: nil)
+            alert.addAction(okBtn)
+            present(alert, animated: true, completion: nil)
         } else {
             DispatchQueue.main.async {
                 self.camTableView.reloadData()
@@ -85,20 +101,20 @@ final class CamerasViewController: UIViewController {
 extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isInternetAviable == true {
-            return networkData?.cameras.count ?? 0
-        } else {
-            return realmData.count
-        }
+                return networkData?.cameras.count ?? 0
+            } else {
+                return realmData?.count ?? 0
+            }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
         if isInternetAviable ?? true, let networkData = networkData {
-            cell.configureFromNet(networkData, at: indexPath)
-        } else {
-            cell.configureFromRealm(realmData[indexPath.row])
-        }
+               cell.configureFromNet(networkData, at: indexPath)
+           } else {
+               cell.configureFromRealm(realmData[indexPath.row])
+           }
         
         cell.contentView.layer.cornerRadius = 10
         cell.contentView.layer.masksToBounds = true
