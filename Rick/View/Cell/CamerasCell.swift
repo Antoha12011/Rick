@@ -30,7 +30,6 @@ final class CamerasCell: UITableViewCell {
     override func prepareForReuse() {
         camLabel.text = nil
         camImage.image = nil
-        favoritStarImg.image = nil
     }
     
     override public var frame: CGRect {
