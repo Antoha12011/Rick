@@ -51,20 +51,19 @@ final class CamerasCell: UITableViewCell {
         favoritStarImg.isHidden = isImageHidden
     }
     
-    func configureFromRealm(_ model: CamerasRealm) {
-        camLabel.text = model.name
-        favoritStarImg.isHidden = !model.favorites
-        recImage.isHidden = !model.rec
-        guard let url = URL(string: model.snapshot) else { return }
-        camImage.kf.setImage(with: url, placeholder: nil)
-    }
-    
-    func configureFromNet(_ cameraData: DataModel, at indexPath: IndexPath) {
-        let camera = cameraData.cameras[indexPath.row]
-        camLabel.text = camera.name
-        favoritStarImg.isHidden = !camera.favorites
-        recImage.isHidden = !camera.rec
-        guard let url = URL(string: camera.snapshot) else { return }
-        camImage.kf.setImage(with: url, placeholder: nil)
+    func configureFromRealmOrNet(_ cameraData: Any) {
+        if let model = cameraData as? CamerasRealm {
+            camLabel.text = model.name
+            favoritStarImg.isHidden = !model.favorites
+            recImage.isHidden = !model.rec
+            guard let url = URL(string: model.snapshot) else { return }
+            camImage.kf.setImage(with: url, placeholder: nil)
+        } else if let camera = cameraData as? Camera {
+            camLabel.text = camera.name
+            favoritStarImg.isHidden = !camera.favorites
+            recImage.isHidden = !camera.rec
+            guard let url = URL(string: camera.snapshot) else { return }
+            camImage.kf.setImage(with: url, placeholder: nil)
+        }
     }
 }

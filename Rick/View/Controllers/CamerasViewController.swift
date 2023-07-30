@@ -113,10 +113,11 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         if isInternetAviable ?? true, let networkData = networkData {
-            cell.configureFromNet(networkData, at: indexPath)
+            let cameraNet = networkData.cameras[indexPath.row]
+            cell.configureFromRealmOrNet(cameraNet)
         } else {
-            let camera = realmData[indexPath.row]
-            cell.configureFromRealm(camera)
+            let cameraDB = realmData[indexPath.row]
+            cell.configureFromRealmOrNet(cameraDB)
         }
         
         cell.contentView.layer.cornerRadius = 10
@@ -136,7 +137,9 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
             }
             completionHandler(true)
         }
-        favoritAction.image = UIImage(named: "star")
+        if let starImage = UIImage(named: "star")?.resized(to: CGSize(width: 40, height: 40)) {
+                favoritAction.image = starImage
+            }
         favoritAction.backgroundColor = .white
         let configuration = UISwipeActionsConfiguration(actions: [favoritAction])
         return configuration

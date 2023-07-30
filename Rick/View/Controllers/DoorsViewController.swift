@@ -67,7 +67,9 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
         let favoritAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
             completionHandler(true)
         }
-        favoritAction.image = UIImage(named: "star")
+        if let starImage = UIImage(named: "star")?.resized(to: CGSize(width: 40, height: 40)) {
+            favoritAction.image = starImage
+        }
         favoritAction.backgroundColor = .white
         
         let renameAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
@@ -77,7 +79,9 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
             }
             completionHandler(true)
         }
-        renameAction.image = UIImage(named: "edit")
+        if let editImage = UIImage(named: "edit")?.resized(to: CGSize(width: 40, height: 40)) {
+            renameAction.image = editImage
+        }
         renameAction.backgroundColor = .white
         
         let configuration = UISwipeActionsConfiguration(actions: [favoritAction, renameAction])
