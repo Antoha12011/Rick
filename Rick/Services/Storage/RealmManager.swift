@@ -30,5 +30,31 @@ final class RealmManager {
         let cameras = realm.objects(CamerasRealm.self)
         return cameras
     }
+    
+    func saveRoomsToRealm(data: [Door]) {
+        do {
+            let realm = try! Realm()
+            try realm.write {
+                for item in data {
+                    let realmDataObject = RoomsRealm()
+                    realmDataObject.id = item.id
+                    realmDataObject.name = item.name
+                    realmDataObject.snapshot = item.snapshot ?? ""
+                    realmDataObject.favorites = item.favorites
+                    realmDataObject.room = item.room
+                    realm.add(realmDataObject, update: .all)
+                }
+            }
+        } catch let error as NSError {
+            print("Error saving data to Realm: \(error)")
+        }
+    }
+    
+    func fetchRooms() -> Results<RoomsRealm>? {
+        let realm = try! Realm()
+        let cameras = realm.objects(RoomsRealm.self)
+        return cameras
+    }
+    
 }
 

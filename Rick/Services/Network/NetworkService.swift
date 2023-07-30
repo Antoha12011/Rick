@@ -46,6 +46,7 @@ final class NetworkService {
                 }
                 do {
                     let model = try JSONDecoder().decode(DoorData.self, from: data)
+                    RealmManager.shared.saveRoomsToRealm(data: model.data)
                     completion(model)
                 } catch {
                     debugPrint("Ошибка декодирования: \(error)")

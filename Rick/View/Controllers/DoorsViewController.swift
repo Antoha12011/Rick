@@ -6,17 +6,24 @@
 //
 
 import UIKit
+import RealmSwift
+import Alamofire
 
 final class DoorsViewController: UIViewController {
     
     // MARK: Private Properties
     
+    private let realm = try! Realm()
     private let sectionOneIdentifier = "DoorsCell"
     private let sectionTwoIdentifier = "DoorsCellWithImage"
     private var networkData: DoorData?
     private let networkService = NetworkService()
+    private let realmManager = RealmManager()
+    private var realmData: Results<RoomsRealm>!
     private var section0Data: [Door]?
     private var section1Data: [Door]?
+    private var isInternetAviable: Bool?
+   
     
     // MARK: - Outlets
     
@@ -28,17 +35,65 @@ final class DoorsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar.shadowImage = UIImage()
-        
-        networkService.getDoors { values in
-            self.networkData = values
-            self.section0Data = values?.data
-            self.section1Data = values?.data
+        fetchData()
+   
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        doorTableView.reloadData()
+        doorTableView.refreshControl = UIRefreshControl()
+        doorTableView.refreshControl?.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+        doorTableView.refreshControl?.tintColor = .black
+    }
+    
+    // MARK: - Public Methods
+    
+    @objc func refreshData() {
+        fetchDataFromNetwork()
+    }
+    
+    private func fetchDataFromNetwork() {
+        guard isInternetAvailable() else {
+            doorTableView.refreshControl?.endRefreshing()
+            return
+        }
+        networkService.getDoors{ [weak self] values in
+            self!.networkData = values
+            self!.section0Data = values?.data
+            self!.section1Data = values?.data
             
+            self?.realmManager.saveRoomsToRealm(data: values!.data)
+            DispatchQueue.main.async {
+                self?.doorTableView.reloadData()
+                self?.doorTableView.refreshControl?.endRefreshing()
+            }
+        }
+    }
+    
+    private func isInternetAvailable() -> Bool {
+        let networkManager = NetworkReachabilityManager()
+        return networkManager?.isReachable ?? false
+    }
+    
+    private func fetchData() {
+        isInternetAviable = isInternetAvailable()
+        realmData = realmManager.fetchRooms()
+        if isInternetAviable == true {
+            fetchDataFromNetwork()
+        } else if realmData.isEmpty {
+            let alert = UIAlertController(title: "Проблемы с интернетом!", message: "К сожалению, загруженных данных на вашем телефоне нет, подключитесь к интернету", preferredStyle: .actionSheet)
+            let okBtn = UIAlertAction(title: "Хорошо", style: .cancel, handler: nil)
+            alert.addAction(okBtn)
+            present(alert, animated: true, completion: nil)
+        } else {
             DispatchQueue.main.async {
                 self.doorTableView.reloadData()
             }
         }
     }
+    
+    
     // MARK: - Actions
     
     @IBAction func camBtn(_ sender: Any) {
@@ -78,7 +133,7 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
             if let cameraData = section1Data?[indexPath.row] as? Door {
                 cell.configureFromNetwork(cameraData)
             }
-          
+            
             cell.contentView.layer.cornerRadius = 10
             cell.contentView.layer.masksToBounds = true
             return cell

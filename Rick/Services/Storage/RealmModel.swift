@@ -16,3 +16,11 @@ final class CamerasRealm: Object {
     @Persisted var favorites: Bool
     @Persisted var rec: Bool
 }
+
+final class RoomsRealm: Object {
+    @Persisted(primaryKey: true) var id = 0
+    @Persisted var name: String
+    @Persisted var room: String?
+    @Persisted var snapshot: String
+    @Persisted var favorites: Bool
+}

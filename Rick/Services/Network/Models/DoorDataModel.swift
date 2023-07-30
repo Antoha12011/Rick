@@ -8,13 +8,13 @@
 import Foundation
 
 struct DoorData: Codable {
-    let data: [Door]?
+    let data: [Door]
 }
 
 struct Door: Codable {
-    let name: String?
+    let name: String
     let room: String?
-    let id: Int?
+    let id: Int
     let favorites: Bool
     let snapshot: String?
 }
