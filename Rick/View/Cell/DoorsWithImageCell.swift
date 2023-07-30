@@ -16,8 +16,8 @@ final class DoorsWithImageCell: UITableViewCell {
     
     @IBOutlet weak var visualImg: UIImageView!
     @IBOutlet weak var lockImg: UIImageView!
-    @IBOutlet weak var domofonLabel: UILabel!
     @IBOutlet weak var favBat: UIImageView!
+    @IBOutlet weak var domofonTextField: UITextField!
     
     // MARK: - Override
     
@@ -36,7 +36,7 @@ final class DoorsWithImageCell: UITableViewCell {
     }
     
     func configureFromNetwork(_ cameraData: Door) {
-        domofonLabel.text = cameraData.name
+        domofonTextField.text = cameraData.name
         favBat.isHidden = !cameraData.favorites
         guard let url = URL(string: cameraData.snapshot ?? "") else { return }
         visualImg.kf.setImage(with: url, placeholder: nil)

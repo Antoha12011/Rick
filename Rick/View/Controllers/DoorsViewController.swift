@@ -92,6 +92,12 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let favoritAction = UIContextualAction(style: .destructive, title: nil) { (_, _, completionHandler) in
+            if let cell = tableView.cellForRow(at: indexPath) as? DoorsCell {
+                cell.toggleImage()
+            }
+            if let cell = tableView.cellForRow(at: indexPath) as? DoorsWithImageCell {
+                cell.toggleImage()
+            }
             completionHandler(true)
         }
         if let starImage = UIImage(named: "star")?.resized(to: CGSize(width: 40, height: 40)) {
@@ -103,9 +109,10 @@ extension DoorsViewController: UITableViewDelegate, UITableViewDataSource {
             if let cell = tableView.cellForRow(at: indexPath) as? DoorsCell {
                 cell.doorTextField.isEnabled = true
                 cell.doorTextField.becomeFirstResponder()
-                if let cell = tableView.cellForRow(at: indexPath) as? DoorsCell {
-                    cell.toggleImage()
-                }
+            }
+            if let cell = tableView.cellForRow(at: indexPath) as? DoorsWithImageCell {
+                cell.domofonTextField.isEnabled = true
+                cell.domofonTextField.becomeFirstResponder()
             }
             completionHandler(true)
         }
