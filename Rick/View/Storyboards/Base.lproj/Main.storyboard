@@ -40,12 +40,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="°Rec" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMh-Ch-pjY">
-                                                    <rect key="frame" x="20" y="11" width="33" height="18"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" systemColor="systemRedColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="starFavorit" translatesAutoresizingMaskIntoConstraints="NO" id="TEg-wl-bCs">
                                                     <rect key="frame" x="329" y="11" width="35" height="35"/>
                                                     <color key="tintColor" systemColor="systemYellowColor"/>
@@ -57,16 +51,13 @@
                                             </subviews>
                                             <color key="backgroundColor" systemColor="systemGray5Color"/>
                                             <constraints>
-                                                <constraint firstItem="aMh-Ch-pjY" firstAttribute="leading" secondItem="g0j-sz-p6J" secondAttribute="leadingMargin" id="2Cj-cf-Al7"/>
                                                 <constraint firstItem="TEg-wl-bCs" firstAttribute="top" secondItem="g0j-sz-p6J" secondAttribute="topMargin" id="3C8-ef-JFN"/>
                                                 <constraint firstItem="y5n-C1-m36" firstAttribute="leading" secondItem="g0j-sz-p6J" secondAttribute="leadingMargin" id="9be-AB-gFF"/>
                                                 <constraint firstItem="T2f-H5-O8Z" firstAttribute="leading" secondItem="g0j-sz-p6J" secondAttribute="leading" id="HJd-75-qOQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="T2f-H5-O8Z" secondAttribute="trailing" id="Ks9-WC-DRY"/>
                                                 <constraint firstItem="y5n-C1-m36" firstAttribute="top" secondItem="T2f-H5-O8Z" secondAttribute="bottom" constant="20" id="PKj-D5-UGU"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="aMh-Ch-pjY" secondAttribute="trailing" constant="20" symbolic="YES" id="Pxp-5m-xO1"/>
                                                 <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="y5n-C1-m36" secondAttribute="trailing" constant="100" id="Zhz-tv-3XH"/>
                                                 <constraint firstItem="TEg-wl-bCs" firstAttribute="trailing" secondItem="g0j-sz-p6J" secondAttribute="trailingMargin" constant="10" id="fUH-np-ore"/>
-                                                <constraint firstItem="aMh-Ch-pjY" firstAttribute="top" secondItem="g0j-sz-p6J" secondAttribute="topMargin" id="jUR-IT-ta5"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="y5n-C1-m36" secondAttribute="bottom" constant="20" id="m82-FI-wFt"/>
                                                 <constraint firstItem="T2f-H5-O8Z" firstAttribute="top" secondItem="g0j-sz-p6J" secondAttribute="top" id="v20-TW-n2X"/>
                                             </constraints>
@@ -75,7 +66,6 @@
                                             <outlet property="camImage" destination="T2f-H5-O8Z" id="Bwb-UL-QlC"/>
                                             <outlet property="camLabel" destination="y5n-C1-m36" id="if6-ap-DJd"/>
                                             <outlet property="favoritStarImg" destination="TEg-wl-bCs" id="pV7-Sm-Vyo"/>
-                                            <outlet property="recLabel" destination="aMh-Ch-pjY" id="Ocg-ou-dwe"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -473,9 +463,6 @@
         </systemColor>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

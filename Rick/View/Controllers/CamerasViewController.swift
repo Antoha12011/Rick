@@ -13,6 +13,7 @@ final class CamerasViewController: UIViewController {
     // MARK: - Private Properties
     
     private let realm = try! Realm()
+    private let cellIdentifier = "CamerasCell"
     private let networkService = NetworkService()
     private let realmManager = RealmManager()
     private var realmData: Results<CamerasRealm>!
@@ -90,7 +91,7 @@ extension CamerasViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CamerasCell", for: indexPath) as? CamerasCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? CamerasCell else {
             return UITableViewCell()
         }
         if isInternetAviable ?? true, let networkData = networkData {

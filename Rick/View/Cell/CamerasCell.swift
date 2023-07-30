@@ -18,7 +18,6 @@ final class CamerasCell: UITableViewCell {
     
     @IBOutlet weak var camImage: UIImageView!
     @IBOutlet weak var camLabel: UILabel!
-    @IBOutlet weak var recLabel: UILabel!
     @IBOutlet weak var favoritStarImg: UIImageView!
     
     // MARK: - Override
@@ -31,7 +30,6 @@ final class CamerasCell: UITableViewCell {
     override func prepareForReuse() {
         camLabel.text = nil
         camImage.image = nil
-        recLabel.text = nil
         favoritStarImg.image = nil
     }
     
